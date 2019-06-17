@@ -59,7 +59,7 @@ const routes: Routes = [
                 children: [
                     { path: '', redirectTo: 'index', pathMatch: 'full' },
                     { path: 'index', component: IndexComponent, data: { title: ':: Lucid Angular :: Dashboard :: Analytical ::' } },
-                    { path: 'iot', component: IotDashboardComponent, data: { title: ':: Lucid Angular :: Dashboard :: IoT ::' } },
+                    // { path: 'iot', component: IotDashboardComponent, data: { title: ':: Lucid Angular :: Dashboard :: IoT ::' } },
                 ]
             },
             { 
@@ -133,13 +133,13 @@ const routes: Routes = [
                     
                 ]
             },
-            {
-                path: 'charts',
-                children: [
-                    { path: '', redirectTo: 'chart-echarts', pathMatch: 'full' },
-                    { path: 'chart-echarts', component: ChartEchartComponent, data: { title: ':: Lucid Angular :: Charts :: E-Charts ::' } },
-                ]
-            },
+            // {
+            //     path: 'charts',
+            //     children: [
+            //         { path: '', redirectTo: 'chart-echarts', pathMatch: 'full' },
+            //         { path: 'chart-echarts', component: ChartEchartComponent, data: { title: ':: Lucid Angular :: Charts :: E-Charts ::' } },
+            //     ]
+            // },
             {
                 path: 'forms',
                 children: [
@@ -148,15 +148,15 @@ const routes: Routes = [
                     { path: 'forms-basic', component: FormsBasicComponent, data: { title: ':: Lucid Angular :: Form Basic :: Forms ::' } }
                 ]
             },
-            {
-                path: 'blogs',
-                children: [
-                    { path: '', redirectTo: 'blog-post', pathMatch: 'full' },
-                    { path: 'blog-post', component: BlogPostComponent, data: { title: ':: Lucid Angular :: Blog Post :: Blog ::' } },
-                    { path: 'blog-list', component: BlogListComponent, data: { title: ':: Lucid Angular :: Blog List :: Blog ::' } },
-                    { path: 'blog-details', component: BlogDetailsComponent, data: { title: ':: Lucid Angular :: Blog Details :: Blog ::' } }
-                ]
-            },
+            // {
+            //     path: 'blogs',
+            //     children: [
+            //         { path: '', redirectTo: 'blog-post', pathMatch: 'full' },
+            //         { path: 'blog-post', component: BlogPostComponent, data: { title: ':: Lucid Angular :: Blog Post :: Blog ::' } },
+            //         { path: 'blog-list', component: BlogListComponent, data: { title: ':: Lucid Angular :: Blog List :: Blog ::' } },
+            //         { path: 'blog-details', component: BlogDetailsComponent, data: { title: ':: Lucid Angular :: Blog Details :: Blog ::' } }
+            //     ]
+            // },
             {
                 path: 'widgets',
                 children: [
@@ -167,13 +167,13 @@ const routes: Routes = [
                     { path: 'widgets-ecommerce', component: WidgetsEcommerceComponent, data: { title: ':: Lucid Angular :: Widgets eCommerce :: Widgets ::' } }
                 ]
             },
-            {
-                path: 'maps',
-                children: [
-                    { path: '', redirectTo: 'leaflet', pathMatch: 'full' },
-                    { path: 'leaflet', component: PageLeafletComponent, data: { title: ':: Lucid Angular :: Maps :: Leaflet ::' } },
-                ]
-            }
+            // {
+            //     path: 'maps',
+            //     children: [
+            //         { path: '', redirectTo: 'leaflet', pathMatch: 'full' },
+            //         { path: 'leaflet', component: PageLeafletComponent, data: { title: ':: Lucid Angular :: Maps :: Leaflet ::' } },
+            //     ]
+            // }
         ]
     },
     

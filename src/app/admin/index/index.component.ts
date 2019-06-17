@@ -23,9 +23,9 @@ export class IndexComponent implements OnInit, OnDestroy {
     public dataManagedBarChart: EChartOption = {};
 
     public earningOptionsSeries: Array<number> = [1, 4, 1, 3, 7, 1];
-    public earnings: string = '$' + (this.earningOptionsSeries.reduce((a, b) => a + b, 0) * 1000).toLocaleString();
+    public earnings: string =  (this.earningOptionsSeries.reduce((a, b) => a + b, 0) * 1000).toLocaleString() + 'EGP';
     public salesOptionsSeries: Array<number> = [1, 4, 2, 3, 6, 2];
-    public sales: string = '$' + (this.salesOptionsSeries.reduce((a, b) => a + b, 0) * 10000).toLocaleString();
+    public sales: string = 'EGP' + (this.salesOptionsSeries.reduce((a, b) => a + b, 0) * 10000).toLocaleString();
     public visitsAreaOptionsSeries: Array<number> = [1, 4, 2, 3, 1, 5];
     public visits: number = this.visitsAreaOptionsSeries.reduce((a, b) => a + b, 0);
     public LikesOptionsSeries: Array<number> = [1, 3, 5, 1, 4, 2];
@@ -74,7 +74,7 @@ export class IndexComponent implements OnInit, OnDestroy {
             }
             that.earningOptionsSeries.push(rand);
             that.earningOptions = that.loadLineAreaChartOptions(that.earningOptionsSeries, "#f79647", "#fac091");
-            that.earnings = '$' + (that.earningOptionsSeries.reduce((a, b) => a + b, 0) * 1000).toLocaleString();
+            that.earnings = 'EGP' + (that.earningOptionsSeries.reduce((a, b) => a + b, 0) * 1000).toLocaleString();
 
 
             that.salesOptionsSeries.shift();
@@ -84,7 +84,7 @@ export class IndexComponent implements OnInit, OnDestroy {
             }
             that.salesOptionsSeries.push(rand);
             that.salesOptions = that.loadLineAreaChartOptions(that.salesOptionsSeries, "#604a7b", "#a092b0");
-            that.sales = '$' + (that.salesOptionsSeries.reduce((a, b) => a + b, 0) * 10000).toLocaleString();
+            that.sales = 'EGP' + (that.salesOptionsSeries.reduce((a, b) => a + b, 0) * 10000).toLocaleString();
 
             that.visitsAreaOptionsSeries.shift();
             rand = Math.floor(Math.random() * 11);

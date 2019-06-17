@@ -31,7 +31,7 @@
     <div class="row clearfix">
         <div class="col-lg-3 col-md-6 col-sm-6">
             <app-detail-tiles
-                [title]="'EARNINGS'"
+                [title]="'INVOICES'"
                 [value]="earnings"
                 [details]="'19% compared to last week'"
                 [chartOptions]="earningOptions"
@@ -39,7 +39,7 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <app-detail-tiles
-                [title]="'SALES'"
+                [title]="'DUE'"
                 [value]="sales"
                 [details]="'25% compared to last week'"
                 [chartOptions]="salesOptions"
@@ -47,7 +47,7 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <app-detail-tiles
-                [title]="'VISITS'"
+                [title]="'PAYED'"
                 [value]="visits.toLocaleString()"
                 [details]="'19% compared to last week'"
                 [chartOptions]="visitsAreaOptions"
@@ -55,7 +55,7 @@
         </div>
         <div class="col-lg-3 col-md-6 col-sm-6">
             <app-detail-tiles
-                [title]="'LIKES'"
+                [title]="'CUSTOMERS'"
                 [value]="likes.toLocaleString()"
                 [details]="'19% compared to last week'"
                 [chartOptions]="LikesOptions"

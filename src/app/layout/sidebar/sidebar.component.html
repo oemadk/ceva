@@ -51,10 +51,10 @@
                                 <span>Dashboard</span></a>
                             <ul *ngIf="currentActiveMenu == 'dashboard'">
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/dashboard/index']">Analytical</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/dashboard/iot']">IoT</a></li>
+                              <!--   <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/dashboard/iot']">IoT</a></li> -->
                             </ul>
                         </li>
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'app'}">
+<!--                         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'app'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('app')"><i class="icon-grid"></i> <span>App</span></a>
                             <ul *ngIf="currentActiveMenu == 'app'">
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/app/app-inbox']">Inbox</a></li>
@@ -63,17 +63,17 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/app/app-contact-grid']">Contact
                                         Card <span class="badge badge-warning float-right">New</span></a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li [ngClass]="{'active':currentActiveMenu == 'file-manager'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('file-manager')"><i class="icon-folder"></i>
-                                <span>File Manager</span></a>
+                                <span>Manage Files</span></a>
                             <ul *ngIf="currentActiveMenu == 'file-manager'">
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/file-manager/file-documents']">Documents</a></li>
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/file-manager/file-media']">Media</a></li>
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/file-manager/file-images']">Images</a></li>
                             </ul>
                         </li>
-                        <li [ngClass]="{'active':currentActiveMenu == 'blogs'}">
+<!--                         <li [ngClass]="{'active':currentActiveMenu == 'blogs'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('blogs')"><i class="icon-globe"></i>
                                 <span>Blog</span></a>
                             <ul *ngIf="currentActiveMenu == 'blogs'">
@@ -81,8 +81,8 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/blogs/blog-list']">Blog List</a></li>
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/blogs/blog-details']">Blog Details</a></li>
                             </ul>
-                        </li>
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'ui-elements'}">
+                        </li> -->
+<!--                         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'ui-elements'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('ui-elements')"><i class="icon-diamond"></i>
                                 <span>UI Elements</span></a>
                             <ul *ngIf="currentActiveMenu == 'ui-elements'">
@@ -103,8 +103,8 @@
                                         Bars</a></li>
                             </ul>
                         </li>
-
-                        <li [ngClass]="{'active':currentActiveMenu == 'widgets'}">
+ -->
+<!--                         <li [ngClass]="{'active':currentActiveMenu == 'widgets'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('widgets')"><i class="icon-puzzle"></i>
                                 <span>Widgets</span></a>
                             <ul *ngIf="currentActiveMenu == 'widgets'">
@@ -117,9 +117,9 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a
                                         [routerLink]="['/admin/widgets/widgets-ecommerce']">eCommerce</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         
-                        <li [ngClass]="{'active':currentActiveMenu == 'authentication'}">
+<!--                         <li [ngClass]="{'active':currentActiveMenu == 'authentication'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('authentication')"><i class="icon-lock"></i>
                                 <span>Authentication</span></a>
                             <ul *ngIf="currentActiveMenu == 'authentication'">
@@ -132,7 +132,7 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/authentication/page-500']">Page 500</a></li>
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/authentication/page-503']">Page 503</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li [ngClass]="{'active':currentActiveMenu == 'pages'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('pages')"><i class="icon-docs"></i> <span>Pages</span></a>
                             <ul *ngIf="currentActiveMenu == 'pages'">
@@ -163,7 +163,7 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-faq']">FAQ</a></li>
                             </ul>
                         </li>
-                        <li [ngClass]="{'active':currentActiveMenu == 'forms'}">
+<!--                         <li [ngClass]="{'active':currentActiveMenu == 'forms'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('forms')"><i class="icon-pencil"></i>
                                 <span>Forms</span></a>
                             <ul *ngIf="currentActiveMenu == 'forms'">
@@ -171,15 +171,15 @@
                                         [routerLink]="['/admin/forms/forms-validation']">Form Validation</a></li>
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/forms/forms-basic']">Basic Elements</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                         <li [ngClass]="{'active':currentActiveMenu == 'tables'}">
-                            <a class="has-arrow" (click)="activeInactiveMenu('tables')"><i class="icon-tag"></i> <span>Tables</span></a>
+                            <a class="has-arrow" (click)="activeInactiveMenu('tables')"><i class="icon-tag"></i> <span>Users</span></a>
                             <ul *ngIf="currentActiveMenu == 'tables'">
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/tables/table-normal']">Normal
                                         Tables</a></li>
                             </ul>
                         </li>
-                        <li [ngClass]="{'active':currentActiveMenu == 'charts'}">
+<!--                         <li [ngClass]="{'active':currentActiveMenu == 'charts'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('charts')"><i class="icon-bar-chart"></i>
                                 <span>Charts</span></a>
                             <ul *ngIf="currentActiveMenu == 'charts'">
@@ -193,7 +193,7 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a
                                         [routerLink]="['/admin/maps/leaflet']">Leaflet</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </div>
