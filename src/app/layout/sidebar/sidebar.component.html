@@ -136,7 +136,7 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/authentication/page-503']">Page 503</a></li>
                             </ul>
                         </li> -->
-                        <li [ngClass]="{'active':currentActiveMenu == 'pages'}">
+<!--                         <li [ngClass]="{'active':currentActiveMenu == 'pages'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('pages')"><i class="icon-docs"></i> <span>Pages</span></a>
                             <ul *ngIf="currentActiveMenu == 'pages'">
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-blank']">Blank
@@ -165,7 +165,7 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-testimonials']">Testimonials</a></li>
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-faq']">FAQ</a></li>
                             </ul>
-                        </li>
+                        </li> -->
 <!--                         <li [ngClass]="{'active':currentActiveMenu == 'forms'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('forms')"><i class="icon-pencil"></i>
                                 <span>Forms</span></a>
@@ -178,8 +178,8 @@
                         <li [ngClass]="{'active':currentActiveMenu == 'tables'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('tables')"><i class="icon-tag"></i> <span>Users</span></a>
                             <ul *ngIf="currentActiveMenu == 'tables'">
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/tables/table-normal']">Normal
-                                        Tables</a></li>
+                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/tables/table-normal']">Show
+                                        Users</a></li>
                             </ul>
                         </li>
 <!--                         <li [ngClass]="{'active':currentActiveMenu == 'charts'}">
