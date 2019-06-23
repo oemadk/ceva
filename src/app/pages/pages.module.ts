@@ -20,6 +20,9 @@ import { RouterModule } from '@angular/router';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { CommonElementsModule } from '../common-elements/common-elements.module';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { UploadService } from '../services/upload.service'
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
 	declarations: [
@@ -45,7 +48,13 @@ import { NgxGalleryModule } from 'ngx-gallery';
 		RouterModule,
 		NgxEchartsModule,
         CommonElementsModule,
-        NgxGalleryModule
+        NgxGalleryModule,
+        ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule
+	],
+	providers:[
+		UploadService
 	],
 	exports: []
 })

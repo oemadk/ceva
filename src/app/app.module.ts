@@ -10,9 +10,10 @@ import { FullCalendarModule } from 'ng-fullcalendar';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { UploadService } from './services/upload.service'
 
 import * as $ from 'jquery';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 @NgModule({
     declarations: [
         AppComponent
@@ -27,9 +28,13 @@ import * as $ from 'jquery';
         FullCalendarModule,
         NgMultiSelectDropDownModule.forRoot(),
         LeafletModule.forRoot(),
-        NgxGalleryModule
+        NgxGalleryModule,
+            ReactiveFormsModule,
+    FormsModule
     ],
-    providers: [],
+    providers: [
+    UploadService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

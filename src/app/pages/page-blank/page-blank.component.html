@@ -53,74 +53,168 @@
 					<!-- <h4>Upload Excel Sheets</h4> -->
 
 					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
-												<h6>Opening Balance</h6>
-	
-					<div class="input-group mb-3">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="inputGroupFile03">
-							<label class="custom-file-label" for="inputGroupFile03">Choose file</label>
-						</div>
-					</div>
-	
-						</div>		
-						
 
-												<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
-												<h6>Invoices</h6>
-	
-					<div class="input-group mb-3">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="inputGroupFile03">
-							<label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+<!--the buttons to change the view-->
+						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+
+                  			   <button (click)="openingBalanceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Opening Balance</button>
+
+                 			   <button (click)="invoiceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Invoices</button>
+
+                 			   <button (click)="discountFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Discount</button>
+                		   
+                		       <button (click)="collectionFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Collections</button>
+               			  
+               			       <button (click)="endingBalanceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Ending Balance</button>
 						</div>
-					</div>
-	
-						</div>
+<!--the buttons to change the view-->
 
 
-												<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
-												<h6>Discount</h6>
-	
-					<div class="input-group mb-3">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="inputGroupFile03">
-							<label class="custom-file-label" for="inputGroupFile03">Choose file</label>
-						</div>
-					</div>
-	
-						</div>
+<!--opening balance view-->
+						<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 animation"  *ngIf="openingBalance">
+							 <div *ngIf="error">
+    {{ error.message }}
+  </div>
+   <div *ngIf="uploadResponse.status === 'error'">
+    {{ uploadResponse.message }}
+  </div>
 
 
+								<h6>Opening Balance</h6>
+								<div class="input-group mb-3">
+									<div class="custom-file">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-												<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
-												<h6>Collections</h6>
-	
-					<div class="input-group mb-3">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="inputGroupFile03">
-							<label class="custom-file-label" for="inputGroupFile03">Choose file</label>
-						</div>
-					</div>
-	
-						</div>
+    <input type="file" name="avatar" (change)="onFileChange($event)" />
+    <button type="submit">Upload</button>
+
+  </form>
+									</div>
+								</div>
+
+								  <div *ngIf="uploadResponse.status === 'progress'">
 
 
-												<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
-												<h6>Ending Balance</h6>
-	
-					<div class="input-group mb-3">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="inputGroupFile03">
-							<label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+ <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
+
+  </div>
 						</div>
-					</div>
-	
+<!--opening balance view ends here-->
+
+						<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 animation" *ngIf="invoices">
+							 <div *ngIf="error">
+    {{ error.message }}
+  </div>
+   <div *ngIf="uploadResponse.status === 'error'">
+    {{ uploadResponse.message }}
+  </div>
+
+								<h6>Invoices</h6>
+								<div class="input-group mb-3">
+									<div class="custom-file">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <input type="file" name="avatar" (change)="onFileChange($event)" />
+    <button type="submit">Upload</button>
+
+  </form>
+									</div>
+								</div>
+
+								  <div *ngIf="uploadResponse.status === 'progress'">
+
+
+ <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
+
+  </div>
+
 						</div>
-					</div>
-				</div>
+
+						<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 animation" *ngIf="discount">
+							 <div *ngIf="error">
+    {{ error.message }}
+  </div>
+   <div *ngIf="uploadResponse.status === 'error'">
+    {{ uploadResponse.message }}
+  </div>
+  <div *ngIf="uploadResponse.status === 'progress'">
+
+
+ <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
+
+  </div>
+
+								<h6>Discount</h6>
+								<div class="input-group mb-3">
+									<div class="custom-file">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <input type="file" name="avatar" (change)="onFileChange($event)" />
+    <button type="submit">Upload</button>
+
+  </form>
+									</div>
+								</div>
+						</div>
+
+						<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 animation" *ngIf="collections">
+							 <div *ngIf="error">
+    {{ error.message }}
+  </div>
+   <div *ngIf="uploadResponse.status === 'error'">
+    {{ uploadResponse.message }}
+  </div>
+  <div *ngIf="uploadResponse.status === 'progress'">
+
+
+ <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
+
+  </div>
+
+								<h6>Opening Balance</h6>
+								<div class="input-group mb-3">
+									<div class="custom-file">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <input type="file" name="avatar" (change)="onFileChange($event)" />
+    <button type="submit">Upload</button>
+
+  </form>
+									</div>
+								</div>
+						</div>
+
+						<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 animation" *ngIf="endingBalance">
+							 <div *ngIf="error">
+    {{ error.message }}
+  </div>
+   <div *ngIf="uploadResponse.status === 'error'">
+    {{ uploadResponse.message }}
+  </div>
+  <div *ngIf="uploadResponse.status === 'progress'">
+
+
+ <!--     <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>-->
+
+            <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
+
+
+  </div>
+
+								<h6>Ending Balance</h6>
+								<div class="input-group mb-3">
+									<div class="custom-file">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <input type="file" name="avatar" (change)="onFileChange($event)" />
+    <button type="submit">Upload</button>
+
+  </form>
+									</div>
+								</div>
+						</div>
+					</div> </div>
 			</div>
 		</div>
-
 	</div>
 </div>
