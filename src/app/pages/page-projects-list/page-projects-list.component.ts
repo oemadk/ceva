@@ -37,11 +37,7 @@ export class PageProjectsListComponent implements OnInit {
         this.ngUnsubscribe.complete();
     }
 
-    toggleFullWidth() {
-        this.sidebarService.toggle();
-        this.sidebarVisible = this.sidebarService.getStatus();
-        this.cdr.detectChanges();
-    }
+
 
   toggleFullWidth() {
     this.sidebarService.toggle();
