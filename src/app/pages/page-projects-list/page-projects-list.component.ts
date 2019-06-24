@@ -1,7 +1,9 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { EChartOption } from 'echarts';
 import { SidebarService } from '../../services/sidebar.service';
-
+import { ActivatedRoute } from '@angular/router';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-page-projects-list',
   templateUrl: './page-projects-list.component.html',
@@ -13,13 +15,33 @@ export class PageProjectsListComponent implements OnInit {
   public visitsOptions: EChartOption = {};
   public sidebarVisible: boolean = true;
 
-  constructor(private sidebarService: SidebarService, private cdr: ChangeDetectorRef) {
+
+    public fragment: string = "details";
+    private ngUnsubscribe = new Subject();
+
+  constructor(private sidebarService: SidebarService, private cdr: ChangeDetectorRef, private activatedRoute: ActivatedRoute) {
+       this.activatedRoute.fragment.pipe(takeUntil(this.ngUnsubscribe)).subscribe((fragment: string) => {
+            if (fragment) {
+                this.fragment = fragment;
+            }
+        });
     this.visitorsOptions = this.loadLineChartOptions([3, 5, 1, 6, 5, 4, 8, 3], "#49c5b6");
     this.visitsOptions = this.loadLineChartOptions([4, 6, 3, 2, 5, 6, 5, 4], "#f4516c");
   }
 
   ngOnInit() {
   }
+
+   ngOnDestroy() {
+        this.ngUnsubscribe.next();
+        this.ngUnsubscribe.complete();
+    }
+
+    toggleFullWidth() {
+        this.sidebarService.toggle();
+        this.sidebarVisible = this.sidebarService.getStatus();
+        this.cdr.detectChanges();
+    }
 
   toggleFullWidth() {
     this.sidebarService.toggle();

@@ -164,12 +164,6 @@
    <div *ngIf="uploadResponse.status === 'error'">
     {{ uploadResponse.message }}
   </div>
-  <div *ngIf="uploadResponse.status === 'progress'">
-
-
- <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
-
-  </div>
 
 								<h6>Opening Balance</h6>
 								<div class="input-group mb-3">
@@ -182,6 +176,13 @@
   </form>
 									</div>
 								</div>
+								  <div *ngIf="uploadResponse.status === 'progress'">
+
+
+ <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
+
+  </div>
+
 						</div>
 
 						<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 animation" *ngIf="endingBalance">
@@ -190,15 +191,6 @@
   </div>
    <div *ngIf="uploadResponse.status === 'error'">
     {{ uploadResponse.message }}
-  </div>
-  <div *ngIf="uploadResponse.status === 'progress'">
-
-
- <!--     <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>-->
-
-            <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
-
-
   </div>
 
 								<h6>Ending Balance</h6>
@@ -212,6 +204,17 @@
   </form>
 									</div>
 								</div>
+
+								  <div *ngIf="uploadResponse.status === 'progress'">
+
+
+ <!--     <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>-->
+
+            <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
+
+
+  </div>
+
 						</div>
 					</div> </div>
 			</div>
