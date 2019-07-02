@@ -175,7 +175,7 @@
                         <li [ngClass]="{'active':currentActiveMenu == 'tables'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('tables')"><i class="icon-tag"></i> <span>User Screens Demo</span></a>
                             <ul *ngIf="currentActiveMenu == 'tables'">
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/tables/table-normal']">Show SMS</a></li>
+                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-gallery']">Show SMS</a></li>
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-invoices']">Show Details with add Comment Screen</a></li>
                             </ul>
                         </li>
