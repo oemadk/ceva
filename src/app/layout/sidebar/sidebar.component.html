@@ -47,25 +47,14 @@
                 <nav id="left-sidebar-nav" class="sidebar-nav">
                     <ul id="main-menu" class="metismenu">
                         <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'dashboard'}">
-                            <a class="has-arrow" (click)="activeInactiveMenu('dashboard')"><i class="icon-home"></i>
+                            <a class="has-arrow" [routerLink]="['/admin/dashboard/index'] "><i class="icon-home"></i>
                                 <span>Dashboard</span></a>
-                            <ul *ngIf="currentActiveMenu == 'dashboard'">
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/dashboard/index']">Analytical</a></li>
-                              <!--   <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/dashboard/iot']">IoT</a></li> -->
-                            </ul>
+
                         </li>
 
 
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [ngClass]="{'active':currentActiveMenu == 'app'}">
-                            <a class="has-arrow" (click)="activeInactiveMenu('app')"><i class="icon-grid"></i> <span>Excel Sheets</span></a>
-                            <ul *ngIf="currentActiveMenu == 'app'">
-
-                                                        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-blank']">Upload Sheets</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/file-manager/file-documents']">Show Documents</a></li>
-<!--                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/app/app-calendar']">Calendar</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/app/app-contact-grid']">Contact
-                                        Card <span class="badge badge-warning float-right">New</span></a></li> -->
-                            </ul>
+                        <li routerLinkActive="active"  [routerLink]="['/admin/pages/page-blank']" >
+                            <a class="has-arrow" ><i class="icon-grid"></i> <span>Statement Sheets</span></a>
                         </li>
                      <!--    <li [ngClass]="{'active':currentActiveMenu == 'file-manager'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('file-manager')"><i class="icon-folder"></i>
@@ -179,6 +168,15 @@
                             <ul *ngIf="currentActiveMenu == 'tables'">
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/tables/table-normal']">Show
                                         Users</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li [ngClass]="{'active':currentActiveMenu == 'tables'}">
+                            <a class="has-arrow" (click)="activeInactiveMenu('tables')"><i class="icon-tag"></i> <span>User Screens Demo</span></a>
+                            <ul *ngIf="currentActiveMenu == 'tables'">
+                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/tables/table-normal']">Show SMS</a></li>
+                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-invoices']">Show Details with add Comment Screen</a></li>
                             </ul>
                         </li>
 <!--                         <li [ngClass]="{'active':currentActiveMenu == 'charts'}">
