@@ -8,15 +8,15 @@
 						<i class="fa fa-arrow-left" *ngIf="sidebarVisible"></i>
 						<i class="fa fa-arrow-right" *ngIf="!sidebarVisible"></i>
 					</a>
-					FAQs
+					Invoices
 				</h2>
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item"><a [routerLink]="['/admin']"><i class="icon-home"></i></a></li>
 					<li class="breadcrumb-item">Pages</li>
-					<li class="breadcrumb-item active">FAQs</li>
+					<li class="breadcrumb-item active">Invoices</li>
 				</ul>
 			</div>
-            <div class="col-lg-7 col-md-4 col-sm-12 text-right">
+<!--             <div class="col-lg-7 col-md-4 col-sm-12 text-right">
                 <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm pt-2">
                     <div echarts [options]="visitorsOptions" class="echart-line-chart" [autoResize]="true" style="height: 20px;">
                     </div>
@@ -27,138 +27,133 @@
                     </div>
                     <span>Visits</span>
                 </div>
-            </div>
+            </div> -->
 		</div>
 	</div>
 
 	<div class="row clearfix">
-		<div class="card">
-			<div class="body">
-				<h6 class="p-10 bg-info text-light">General</h6>
-				<div class="accordion custom" id="accordion">
-					<div>
-						<div class="card-header" id="headingOne">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" type="button" (click)="toggleCollepseGeneral('collapseOne')">
-									How may times Lorum Ipsum has been used in this theme?
-								</button>
-							</h5>
+
+		<div class="col-lg-12 col-md-12">
+			<div class="card invoice1">
+				<div class="body">
+<!-- 					<div class="invoice-top clearfix">
+						<div class="logo">
+							<img src="assets/images/sm/avatar1.jpg" alt="user" class="rounded-circle img-fluid">
 						</div>
-						<div class="collapse" [ngClass]="{'show':collepse == 'collapseOne'}">
-							<div class="card-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-								moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-								Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-								shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-								proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-								aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
+						<div class="info">
+							<h6>Michael Truong</h6>
+							<p> hello@michaeltruong.ca <br>
+								289-335-6503
+							</p>
 						</div>
+						<div class="title">
+							<h4>Invoice #1069</h4>
+							<p>Issued: May 27, 2018<br>
+								Payment Due: June 27, 2018
+							</p>
+						</div>
+					</div> -->
+					<hr>
+					<div class="invoice-mid clearfix">
+
+						<div class="clientlogo">
+							<img src="assets/images/sm/avatar2.jpg" alt="user" class="rounded-circle img-fluid">
+						</div>
+
+						<div class="info">
+							<h6>Client Name: Omar Emad El-Deen</h6>
+							<p>oemadk@gmail.com<br>
+								011111204333</p>
+<!-- 							<h6>Project Description</h6>
+							<p>Proin cursus, dui non tincidunt elementum, tortor ex feugiat enim, at elementum enim quam vel purus.
+								Curabitur semper malesuada urna ut suscipit.</p> -->
+						</div>
+
 					</div>
-					<div>
-						<div class="card-header" id="headingTwo">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" type="button" (click)="toggleCollepseGeneral('collapseTwo')">
-									How many instances of Lorum Ipsum usage can be found on the web?
-								</button>
-							</h5>
-						</div>
-						<div class="collapse" [ngClass]="{'show':collepse == 'collapseTwo'}">
-							<div class="card-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-								moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-								Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-								shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-								proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-								aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div>
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<thead class="thead-dark">
+								<tr>
+									<th></th>
+									<th>Date</th>
+									<th>Document Number</th>
+									<th>Statement</th>
+									<th>Amount</th>
+									<th>Price</th>
+									<th >Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span style="background-color: #ffc000" class="dot"></span></td>
+									<td>12/12/2019</td>
+									<td>#512</td>
+									<td>Opening Balance</td>
+									<td></td>
+									<td></td>
+									<td>50,000 EGP</td>
+								</tr>
+								<tr>
+									<td><span style="background-color: #8eb4e3" class="dot"></span></td>
+									<td>12/12/2019</td>
+									<td>#512</td>
+									<td>Invoices</td>
+									<td>1</td>
+									<td>12,000 EGP</td>
+									<td>12,000 EGP</td>
+								</tr>
+
+
+																																<tr>
+									<td><span style="background-color: #ffff00" class="dot"></span></td>
+									<td>12/12/2019</td>
+									<td>#512</td>
+									<td>Collection</td>
+									<td></td>
+									<td></td>
+									<td>-10,000 EGP</td>
+								</tr>
+
+																																<tr>
+									<td><span style="background-color: #d99694" class="dot"></span></td>
+									<td>12/12/2019</td>
+									<td>#512</td>
+									<td>Discount</td>
+									<td></td>
+									<td></td>
+									<td>-2,000 EGP</td>
+								</tr>
+
+								<tr>
+									<td><span style="background-color: #c4bd97" class="dot"></span></td>
+									<td></td>
+									<td></td>
+									<td>Ending Balance</td>
+									<td></td>
+									<td></td>
+									<td>38,000 EGP</td>
+								</tr>
+
+
+							</tbody>
+						</table>
 					</div>
-					<div>
-						<div class="card-header" id="headingThree">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" type="button" (click)="toggleCollepseGeneral('collapseThree')">
-									How much does it cost to use Lorem ipsum?
-								</button>
-							</h5>
+					<hr>
+
+
+
+
 						</div>
-						<div class="collapse" [ngClass]="{'show':collepse == 'collapseThree'}">
-							<div class="card-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-								moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-								Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-								shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-								proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-								aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
+
+						<div class="hidden-print col-md-12 text-center">
+							<hr>
+							<!-- <button class="btn btn-outline-secondary mr-1"><i class="icon-printer"></i></button> -->
+							<button class="btn btn-primary" style="margin-right: 20px">Approve</button>
+							<button class="btn btn-primary mr-1">Send SMS</button>
 						</div>
 					</div>
 				</div>
-				<div class="m-t-50"></div>
-
-				<h6 class="p-10 bg-warning text-light">Security and Privacy</h6>
-				<div class="accordion custom" id="accordion1">
-					<div>
-						<div class="card-header" id="headingOne">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" type="button" (click)="toggleCollepseGeneral('collapseOne1')">
-									How much does it cost to use Lorem ipsum?
-								</button>
-							</h5>
-						</div>
-						<div class="collapse" [ngClass]="{'show':collepse == 'collapseOne1'}">
-							<div class="card-body">
-								non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-								tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil
-								anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-								excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-								nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div>
-					</div>
-					<div>
-						<div class="card-header" id="headingTwo">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" type="button" (click)="toggleCollepseGeneral('collapseTwo2')">
-									Lorem ipsum commodo adipisicing sunt ad aliqua velit nulla?
-								</button>
-							</h5>
-						</div>
-						<div class="collapse" [ngClass]="{'show':collepse == 'collapseTwo2'}">
-							<div class="card-body">
-								enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
-								skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
-								aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh
-								helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
-								butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
-								probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div>
-					</div>
-					<div>
-						<div class="card-header" id="headingThree">
-							<h5 class="mb-0">
-								<button class="btn btn-link collapsed" type="button" (click)="toggleCollepseGeneral('collapseThree3')">
-									How much does it cost to use Lorem ipsum?
-								</button>
-							</h5>
-						</div>
-						<div class="collapse" [ngClass]="{'show':collepse == 'collapseThree3'}">
-							<div class="card-body">
-								Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-								moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-								Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-								shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-								proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-								aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-							</div>
-						</div>
-					</div>
-				</div>
-
-
 			</div>
 		</div>
-	</div>
 
-</div>
+	<!-- </div> -->

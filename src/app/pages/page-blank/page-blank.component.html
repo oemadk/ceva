@@ -12,11 +12,10 @@
 				</h2>
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item"><a [routerLink]="['/admin']"><i class="icon-home"></i></a></li>
-					<li class="breadcrumb-item">Pages</li>
-					<li class="breadcrumb-item active">Page Blank</li>
+					<li class="breadcrumb-item">Upload Statement Sheet </li>
 				</ul>
 			</div>
-            <div class="col-lg-7 col-md-4 col-sm-12 text-right">
+<!--             <div class="col-lg-7 col-md-4 col-sm-12 text-right">
                 <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm pt-2">
                     <div echarts [options]="visitorsOptions" class="echart-line-chart" [autoResize]="true" style="height: 20px;">
                     </div>
@@ -27,7 +26,7 @@
                     </div>
                     <span>Visits</span>
                 </div>
-            </div>
+            </div> -->
 		</div>
 	</div>
 
@@ -71,7 +70,7 @@
 
 
 <!--opening balance view-->
-						<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 animation"  *ngIf="openingBalance">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="display:inline;" *ngIf="openingBalance">
 							 <div *ngIf="error">
     {{ error.message }}
   </div>
@@ -82,7 +81,7 @@
 
 								<h6>Opening Balance</h6>
 								<div class="input-group mb-3">
-									<div class="custom-file">
+									<div class="custom-file" style="display:inline">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
@@ -101,7 +100,7 @@
 						</div>
 <!--opening balance view ends here-->
 
-						<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 animation" *ngIf="invoices">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="display:inline"*ngIf="invoices">
 							 <div *ngIf="error">
     {{ error.message }}
   </div>
@@ -111,7 +110,7 @@
 
 								<h6>Invoices</h6>
 								<div class="input-group mb-3">
-									<div class="custom-file">
+									<div class="custom-file" style="display:inline">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
@@ -130,7 +129,7 @@
 
 						</div>
 
-						<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 animation" *ngIf="discount">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="display:inline"*ngIf="discount">
 							 <div *ngIf="error">
     {{ error.message }}
   </div>
@@ -146,7 +145,7 @@
 
 								<h6>Discount</h6>
 								<div class="input-group mb-3">
-									<div class="custom-file">
+									<div class="custom-file" style="display:inline">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
@@ -157,7 +156,7 @@
 								</div>
 						</div>
 
-						<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 animation" *ngIf="collections">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="display:inline"*ngIf="collections">
 							 <div *ngIf="error">
     {{ error.message }}
   </div>
@@ -167,7 +166,7 @@
 
 								<h6>Opening Balance</h6>
 								<div class="input-group mb-3">
-									<div class="custom-file">
+									<div class="custom-file" style="display:inline">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
@@ -185,7 +184,7 @@
 
 						</div>
 
-						<div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 animation" *ngIf="endingBalance">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="display:inline"*ngIf="endingBalance">
 							 <div *ngIf="error">
     {{ error.message }}
   </div>
@@ -195,7 +194,7 @@
 
 								<h6>Ending Balance</h6>
 								<div class="input-group mb-3">
-									<div class="custom-file">
+									<div class="custom-file" style="display:inline">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />

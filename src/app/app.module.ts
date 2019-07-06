@@ -14,6 +14,8 @@ import { UploadService } from './services/upload.service'
 
 import * as $ from 'jquery';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+
 @NgModule({
     declarations: [
         AppComponent
@@ -25,7 +27,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
         BrowserAnimationsModule,
         ToastrModule.forRoot(),
         RichTextEditorAllModule,
-        FullCalendarModule,
+        FullCalendarModule,    Ng2SmartTableModule,
+
         NgMultiSelectDropDownModule.forRoot(),
         LeafletModule.forRoot(),
         NgxGalleryModule,

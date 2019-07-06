@@ -125,35 +125,6 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/authentication/page-503']">Page 503</a></li>
                             </ul>
                         </li> -->
-                        <li [ngClass]="{'active':currentActiveMenu == 'pages'}">
-                            <a class="has-arrow" (click)="activeInactiveMenu('pages')"><i class="icon-docs"></i> <span>Approve Invoices</span></a>
-                            <ul *ngIf="currentActiveMenu == 'pages'">
-<!--                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-blank']">Blank
-                                        Page</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-profile']">Profile
-                                        <span class="badge badge-default float-right">v1</span></a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-profile2']">Profile
-                                        <span class="badge badge-warning float-right">v2</span></a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-gallery']">Image
-                                        Gallery</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-timeline']">Timeline</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-pricing']">Pricing</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-invoices']">Invoices
-                                        <span class="badge badge-default float-right">v1</span></a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-invoices2']">Invoices
-                                        <span class="badge badge-warning float-right">v2</span></a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-search-results']">Search
-                                        Results</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-helper-class']">Helper
-                                        Classes</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-teams-board']">Teams
-                                        Board</a></li> -->
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-projects-list']">List</a></li>
-<!--                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/authentication/page-maintanance']">Maintanance</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-testimonials']">Testimonials</a></li>
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-faq']">FAQ</a></li> -->
-                            </ul>
-                        </li>
 <!--                         <li [ngClass]="{'active':currentActiveMenu == 'forms'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('forms')"><i class="icon-pencil"></i>
                                 <span>Forms</span></a>
@@ -163,12 +134,8 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/forms/forms-basic']">Basic Elements</a></li>
                             </ul>
                         </li> -->
-                        <li [ngClass]="{'active':currentActiveMenu == 'tables'}">
-                            <a class="has-arrow" (click)="activeInactiveMenu('tables')"><i class="icon-tag"></i> <span>Users</span></a>
-                            <ul *ngIf="currentActiveMenu == 'tables'">
-                                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/tables/table-normal']">Show
-                                        Users</a></li>
-                            </ul>
+                        <li [ngClass]="{'active':currentActiveMenu == 'users'}">
+                            <a class="has-arrow" (click)="activeInactiveMenu('users')" [routerLink]="['/admin/tables/table-normal']"><i class="icon-tag"></i> <span>Customer Statement</span></a>
                         </li>
 
 

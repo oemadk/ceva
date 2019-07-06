@@ -6,11 +6,11 @@
                         (click)="toggleFullWidth()">
                         <i class="fa fa-arrow-left" *ngIf="sidebarVisible"></i>
                         <i class="fa fa-arrow-right" *ngIf="!sidebarVisible"></i>
-                    </a> Users</h2>
+                    </a> Customer Statements</h2>
                 <ul class="breadcrumb">
                     <li class="breadcrumb-item"><a [routerLink]="['/admin']"><i class="icon-home"></i></a></li>
-                    <li class="breadcrumb-item">users</li>
-                    <li class="breadcrumb-item active">all users</li>
+                    <li class="breadcrumb-item">Customers</li>
+                    <li class="breadcrumb-item active">Statements</li>
                 </ul>
             </div>
 <!--             <div class="col-lg-7 col-md-4 col-sm-12 text-right">
@@ -29,78 +29,21 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-8 col-md-12 left-box">
+        <div class="col-lg-12 col-md-12 left-box">
             <div class="card">
                 <div class="header">
-                    <h2>Users Table </h2>
+                    <h2>Customer Statements</h2>
                 </div>
-                <div class="body table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>FIRST NAME</th>
-                                <th>LAST NAME</th>
-                                <th>USERNAME</th>
-                                <th>NUMBER</th>
-                                <th>INVOICE</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>01111204333</td>
-                                <td><button  [routerLink]="['/admin/pages/page-invoices2']"> Show Invoice</button></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>01111204333</td>
-                                <td><button  [routerLink]="['/admin/pages/page-invoices2']"> Show Invoice</button></td>
+    <ng2-smart-table (custom)="onCustomAction($event)" [settings]="settings" [source]="data"></ng2-smart-table>
 
 
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>01111204333</td>
-                                <td><button  [routerLink]="['/admin/pages/page-invoices2']"> Show Invoice</button></td>
-
-
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Larry</td>
-                                <td>Jellybean</td>
-                                <td>@lajelly</td>
-                                <td>01111204333</td>
-                                <td><button  [routerLink]="['/admin/pages/page-invoices2']"> Show Invoice</button></td>
-
-
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td>Larry</td>
-                                <td>Kikat</td>
-                                <td>@lakitkat</td>
-                                <td>01111204333</td>
-                                <td><button  [routerLink]="['/admin/pages/page-invoices2']"> Show Invoice</button></td>
-
-
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
         </div>
 
+    </div>
+
+</div>
+<!-- 
                 <div class="col-lg-4 col-md-12 right-box">
             <div class="card">
                 <div class="body search">
@@ -124,7 +67,4 @@
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
-
-</div>
+        </div> -->
