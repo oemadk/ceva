@@ -18,19 +18,31 @@ export class TableNormalComponent implements OnInit {
   settings = {
   columns: {
     id: {
-      title: 'ID'
+      title: 'Code'
     },
     name: {
-      title: 'Full Name'
+      title: 'Customer Name'
     },
-    status: {
-      title: 'Status'
+    clientid: {
+      title: 'Customer ID'
     },
-    email: {
-      title: 'Email'
-    },
+
     phone: {
       title: 'Phone'
+    },
+    status: {
+      title: 'Status',
+      type: 'html',
+      valuePrepareFunction: (data) => {
+
+          if(data == "Approved"){
+       return '<p  class="badge badge-success">' + data + '</p>'; }
+
+
+
+       return '<p class="badge badge-warning">' + data + '</p>'; },
+
+
     }
   },
 
@@ -48,14 +60,14 @@ data = [
     id: 1,
     name: "Omar Emad",
     status: "Approved",
-    email: "oemadk@gmail.com",
+    clientid: "142",
     phone: "01111204333"
   },
   {
     id: 2,
     name: "Belal Tarek",
     status: "Pending",
-    email: "btarek@gmail.com",
+    clientid: "1422",
     phone: "011112043123"
   },
   
@@ -64,7 +76,7 @@ data = [
     id: 11,
     name: "Ahmed Shafee",
     status: "Pending",
-    email: "ashafee@gmail.com",
+    clientid: "144",
     phone: "0102312312"
   }
 ];
