@@ -10,28 +10,23 @@
 <!--Author      : @arboshiki-->
 <div id="inventory-invoice">
 
-    <div class="toolbar hidden-print">
-        <div class="text-right">
-            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
-            <button class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button>
-        </div>
-        <hr>
-    </div>
+
     <div class="invoice overflow-auto">
         <div style="min-width: 600px">
             <header>
                 <div class="row">
                     <div class="col">
-                        <a target="_blank" href="#">
+                        <a style="display: inline-block;" target="_blank" href="#">
                             <h1><img style="width: 60px" src="assets/images/logo.png"></h1>
                             </a>
-                    </div>
-                    <div class="col company-details">
-                        <h2 class="name">
+                                                    <h2 style="display: inline-block;" class="name">
                             <a target="_blank" href="#">
-                            Ceva
+                            Customer Statement 
                             </a>
                         </h2>
+                    </div>
+                    <div class="col company-details">
+
 <!--                         <div>CLient Code: #1412</div>
                         <div>Client Name: Omar Emad El-Deen</div>
                         <div>Email: oemadk@gmail.com</div>
@@ -39,14 +34,12 @@
                     </div>
                 </div>
             </header>
-            <main>
+            <main style="    border: 1px solid black;
+    padding: 30px;
+}">
                 <div class="row contacts" >
                     <div class="col invoice-to">
-                        <div class="text-gray-light">INVOICE TO:</div>
-                        <h2 class="to">Omar Emad El-Deen</h2>
-                        <div class="address">Zahraa El-Maadi</div>
-                        <div class="address">Client Code: #412</div>
-                        <div class="email"><a href="mailto:test@example.com">oemadk@gmail.com</a></div>
+                        <h3 > <b>Customer Name:</b> <span style="    font-weight: 100;"> Omar Emad El-Deen</span></h3>
                     </div>
 <!--                     <div class="col invoice-details">
                         <h1 class="invoice-id">INVOICE 41232</h1>
@@ -60,12 +53,16 @@
 <div class="row">
 		<div class="col-lg-12 col-12-lg">
 			
-<h4>Please revise your company's Balance at Ceva's at 12th Dec</h4>
-<h4>Which is 12,000 LE</h4>
+<h5>Please revise your company's Balance at Ceva's at <span style="text-decoration: underline; font-weight: 400">12/12/2019</span></h5>
+<h5>Which is <span style="text-decoration: underline; font-weight: 400">12,000 LE</span></h5>
 <label style="DISPLAY: inline-block;
-    width: 50%;" class="container">Agree
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
+    width: 50%;     margin-top: 57px;
+    text-align: center;" class="container">Agree
+  <input type="checkbox" >
+  <span style="    text-align: right;
+    float: right;
+    position: absolute;
+    left: 42%;" class="checkmark"></span>
 </label>
 <label style="DISPLAY: inline-block;
     width: 50%;" class="container">Disagree
@@ -75,19 +72,29 @@
 		</div>	
 </div>
 
-                <div style="float: right" class="thanks">Your Balance: 9,000 LE</div>
+                <div style="float: right   ;  float: right;
+    font-weight: 500;
+    margin-top: 3%;     color: #007bff;" class="thanks">Your Balance: <input style="    width: 29%;" type="text" name=""> </div>
+
+<hr>
 
 
 
+<h5 style="    margin-top: 9%; ">PLease note that the overdue that needs to be paid immediatley is <span style="text-decoration: underline; font-weight: 400"> 15,000 LE </span> </h5>
+<h5>and the due balance this month is  <span style="text-decoration: underline; font-weight: 400">11,000 LE</span> </h5>
+<br>
+<h5>Totalling <span style="text-decoration: underline; font-weight: 400">20,000 LE</span> </h5>
 
 
-<h5>PLease note that the due amount that needs to be paid immediatley is 15,000 LE </h5>
-<h5>and the due amount due this month is 11,000 LE </h5>
-<h5>Totalling 20,000 LE </h5>
-
-                <div class="thanks">Thank you!</div>
-                <div class="notices">
-									<button class="btn btn-primary">CLOSE</button>
+<br>
+<br>
+<br>
+<br>
+                <div class="notices" style="text-align: center; border-left: 0px">
+									<button style="text-align: center;
+    font-size: 25px;
+    padding: 22px;
+    width: 20%;" class="btn btn-primary">CLOSE</button>
                     <!-- <div class="notice">System Generated Invoice.</div> -->
                 </div>
             </main>

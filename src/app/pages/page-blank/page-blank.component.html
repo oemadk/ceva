@@ -8,11 +8,11 @@
 						<i class="fa fa-arrow-left" *ngIf="sidebarVisible"></i>
 						<i class="fa fa-arrow-right" *ngIf="!sidebarVisible"></i>
 					</a>
-					Page Blank
+					Upload Statement Sheets
 				</h2>
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item"><a [routerLink]="['/admin']"><i class="icon-home"></i></a></li>
-					<li class="breadcrumb-item">Upload Statement Sheet </li>
+					<!-- <li class="breadcrumb-item">Upload Statement Sheet </li> -->
 				</ul>
 			</div>
 <!--             <div class="col-lg-7 col-md-4 col-sm-12 text-right">
@@ -56,21 +56,30 @@
 <!--the buttons to change the view-->
 						<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 
-                  			   <button (click)="openingBalanceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Opening Balance</button>
+                  			   <button *ngIf="openingBalance == 0" (click)="openingBalanceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Opening Balance</button>
+                  			   <button *ngIf="openingBalance == 1" (click)="openingBalanceFunction()" type="button" class="btn btn-primary mr-1 l-grey custom">Opening Balance</button>
 
-                 			   <button (click)="invoiceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Invoices</button>
+                 			   <button *ngIf="invoices == 0"  (click)="invoiceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Invoices</button>
+                 			   <button *ngIf="invoices == 1" (click)="invoiceFunction()" type="button" class="btn btn-primary mr-1 l-grey custom">Invoices</button>
 
-                 			   <button (click)="discountFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Discount</button>
+                 			   <button *ngIf="discount == 0" (click)="discountFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Discount</button>
+                 			   <button *ngIf="discount == 1" (click)="discountFunction()" type="button" class="btn btn-primary mr-1 l-grey custom">Discount</button>
                 		   
-                		       <button (click)="collectionFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Collections</button>
+                		       <button *ngIf="collections == 0" (click)="collectionFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Collections</button>
+                		       <button *ngIf="collections == 1" (click)="collectionFunction()" type="button" class="btn btn-primary mr-1 l-grey custom">Collections</button>
+                		  
                			  
-               			       <button (click)="endingBalanceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Ending Balance</button>
+               			       <button *ngIf="endingBalance == 0" (click)="endingBalanceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Ending Balance</button>
+               			       <button *ngIf="endingBalance == 1" (click)="endingBalanceFunction()" type="button" class="btn btn-primary mr-1 l-grey custom">Ending Balance</button>
+
+<!-- Chnage it to the function of due balance-->
+               			      <button (click)="endingBalanceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Due Balance</button>
 						</div>
 <!--the buttons to change the view-->
 
 
 <!--opening balance view-->
-						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="display:inline;" *ngIf="openingBalance">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="border: solid 1px black; display:inline;margin-top: 0px;"        *ngIf="openingBalance">
 							 <div *ngIf="error">
     {{ error.message }}
   </div>
@@ -79,10 +88,11 @@
   </div>
 
 
-								<h6>Opening Balance</h6>
+								<h1 style="    text-align: left;
+    text-decoration: underline;">Opening Balance</h1>
 								<div class="input-group mb-3">
 									<div class="custom-file" style="display:inline">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" style="text-align:left; margin-bottom:40px; margin: 2em;" (ngSubmit)="onSubmit()">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
     <button type="submit">Upload</button>
@@ -100,7 +110,7 @@
 						</div>
 <!--opening balance view ends here-->
 
-						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="display:inline"*ngIf="invoices">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black" style="display:inline"*ngIf="invoices">
 							 <div *ngIf="error">
     {{ error.message }}
   </div>
@@ -108,10 +118,11 @@
     {{ uploadResponse.message }}
   </div>
 
-								<h6>Invoices</h6>
+								<h1 style="    text-align: left;
+    text-decoration: underline;">Invoices</h1>
 								<div class="input-group mb-3">
 									<div class="custom-file" style="display:inline">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" style="text-align:left; margin-bottom:40px; margin: 2em;" (ngSubmit)="onSubmit()">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
     <button type="submit">Upload</button>
@@ -129,7 +140,7 @@
 
 						</div>
 
-						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="display:inline"*ngIf="discount">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black" style="display:inline"*ngIf="discount">
 							 <div *ngIf="error">
     {{ error.message }}
   </div>
@@ -143,10 +154,11 @@
 
   </div>
 
-								<h6>Discount</h6>
+								<h1 style="    text-align: left;
+    text-decoration: underline;">Discount</h1>
 								<div class="input-group mb-3">
 									<div class="custom-file" style="display:inline">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" style="text-align:left; margin-bottom:40px; margin: 2em;" (ngSubmit)="onSubmit()">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
     <button type="submit">Upload</button>
@@ -156,7 +168,7 @@
 								</div>
 						</div>
 
-						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="display:inline"*ngIf="collections">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black" style="display:inline"*ngIf="collections">
 							 <div *ngIf="error">
     {{ error.message }}
   </div>
@@ -164,10 +176,11 @@
     {{ uploadResponse.message }}
   </div>
 
-								<h6>Opening Balance</h6>
+								<h1 style="    text-align: left;
+    text-decoration: underline;">Opening Balance</h1>
 								<div class="input-group mb-3">
 									<div class="custom-file" style="display:inline">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" style="text-align:left; margin-bottom:40px; margin: 2em;" (ngSubmit)="onSubmit()">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
     <button type="submit">Upload</button>
@@ -184,7 +197,7 @@
 
 						</div>
 
-						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="display:inline"*ngIf="endingBalance">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black" style="display:inline"*ngIf="endingBalance">
 							 <div *ngIf="error">
     {{ error.message }}
   </div>
@@ -192,10 +205,11 @@
     {{ uploadResponse.message }}
   </div>
 
-								<h6>Ending Balance</h6>
+								<h1 style="    text-align: left;
+    text-decoration: underline;">Ending Balance</h1>
 								<div class="input-group mb-3">
 									<div class="custom-file" style="display:inline">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" style="text-align:left; margin-bottom:40px; margin: 2em;" (ngSubmit)="onSubmit()">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
     <button type="submit">Upload</button>
@@ -217,6 +231,27 @@
 						</div>
 					</div> </div>
 			</div>
+		</div>
+	</div>
+
+
+
+	<div class="row clearfix">
+
+		<div class="col-lg-12 col-md-12">
+			<div class="card planned_task">
+				<div class="header">
+					<h2 style="display: inline-block;">Generate Customer Monthly Statements</h2> 
+										<button style="display: inline-block; width: 19em;         margin-left: 22%;"  (click)="doneF()" type="button" class="btn btn-primary mr-1 l-blue custom">Generate</button>
+
+				</div>
+			<div *ngIf="done == 1" style="text-align: center;">
+				<img style="width: 20em" src="assets/images/done.png">
+				<p>Statments Generated Successfully</p>
+			</div>
+			</div>
+
+
 		</div>
 	</div>
 </div>

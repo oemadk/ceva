@@ -13,6 +13,8 @@ export class PageFaqComponent implements OnInit {
 	public visitsOptions: EChartOption = {};
 	public sidebarVisible: boolean = true;
 	public collepse: string = "collapseOne";
+	public openIt = 0;
+	myCheckbox;
 
 	constructor(private sidebarService: SidebarService, private cdr: ChangeDetectorRef) {
 		this.visitorsOptions = this.loadLineChartOptions([3, 5, 1, 6, 5, 4, 8, 3], "#49c5b6");
@@ -35,6 +37,17 @@ export class PageFaqComponent implements OnInit {
 			this.collepse = "";
 		}
 		
+	}
+
+	yourfunc(value){
+		if(this.openIt == 1){
+		this.openIt = 0;
+
+	}else{
+		this.openIt = 1;
+		
+	}
+		console.log(this.openIt)
 	}
 
 	loadLineChartOptions(data, color) {

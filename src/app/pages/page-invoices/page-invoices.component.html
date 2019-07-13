@@ -1,36 +1,5 @@
 <div class="container-fluid">
 
-	<div class="block-header">
-		<div class="row">
-			<div class="col-lg-5 col-md-8 col-sm-12">
-				<h2>
-					<a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth" (click)="toggleFullWidth()">
-						<i class="fa fa-arrow-left" *ngIf="sidebarVisible"></i>
-						<i class="fa fa-arrow-right" *ngIf="!sidebarVisible"></i>
-					</a>
-					Invoices
-				</h2>
-				<ul class="breadcrumb">
-					<li class="breadcrumb-item"><a [routerLink]="['/admin']"><i class="icon-home"></i></a></li>
-					<li class="breadcrumb-item">Pages</li>
-					<li class="breadcrumb-item active">Invoices</li>
-				</ul>
-			</div>
-<!--             <div class="col-lg-7 col-md-4 col-sm-12 text-right">
-                <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm pt-2">
-                    <div echarts [options]="visitorsOptions" class="echart-line-chart" [autoResize]="true" style="height: 20px;">
-                    </div>
-                    <span>Visitors</span>
-                </div>
-                <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm pt-2">
-                    <div echarts [options]="visitsOptions" class="echart-line-chart" [autoResize]="true" style="height: 20px;">
-                    </div>
-                    <span>Visits</span>
-                </div>
-            </div> -->
-		</div>
-	</div>
-
 	<div class="row clearfix">
 
 		<div class="col-lg-12 col-md-12">
@@ -53,7 +22,20 @@
 							</p>
 						</div>
 					</div> -->
+					                <div class="row">
+                    <div class="col">
+                        <a style="display: inline-block;" target="_blank" href="#">
+                            <h1><img style="width: 60px" src="assets/images/logo.png"></h1>
+                            </a>
+                                                    <h2 style="display: inline-block;" class="name">
+                            <a target="_blank" href="#">
+                            Customer  Statement Details 
+                            </a>
+                        </h2>
+                    </div>
+                </div>
 					<hr>
+
 					<div class="invoice-mid clearfix">
 
 						<div class="clientlogo">
@@ -62,7 +44,7 @@
 
 						<div class="info">
 							<h6>Client Name: Omar Emad El-Deen</h6>
-							<p>oemadk@gmail.com<br>
+							<p>
 								011111204333</p>
 <!-- 							<h6>Project Description</h6>
 							<p>Proin cursus, dui non tincidunt elementum, tortor ex feugiat enim, at elementum enim quam vel purus.
@@ -70,27 +52,31 @@
 						</div>
 
 					</div>
+					<br>
+					<br>
 					<div class="table-responsive">
 			<table class="table table-hover">
 							<thead class="thead-dark">
 								<tr>
 									<th></th>
-									<th>Date</th>
+									<th>Document Type</th>
 									<th>Document Number</th>
-									<th>Statement</th>
+
+									<th>Date</th>
 									<th>Amount</th>
 									<th>Price</th>
 									<th >Total</th>
-									<th>Notes</th>
+									<th>Remarks</th>
 
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td><span style="background-color: #ffc000" class="dot"></span></td>
-									<td>12/12/2019</td>
-									<td>#512</td>
 									<td>Opening Balance</td>
+									<td>#512</td>
+
+									<td>12/12/2019</td>
 									<td></td>
 									<td></td>
 									<td>50,000 EGP</td>
@@ -99,9 +85,10 @@
 								</tr>
 								<tr>
 									<td><span style="background-color: #8eb4e3" class="dot"></span></td>
-									<td>12/12/2019</td>
-									<td>#512</td>
 									<td>Invoices</td>
+									<td>#512</td>
+
+									<td>12/12/2019</td>
 									<td>1</td>
 									<td>12,000 EGP</td>
 									<td>12,000 EGP</td>
@@ -112,9 +99,11 @@
 
 																																<tr>
 									<td><span style="background-color: #ffff00" class="dot"></span></td>
-									<td>12/12/2019</td>
-									<td>#512</td>
 									<td>Collection</td>
+									<td>#512</td>
+
+
+									<td>12/12/2019</td>
 									<td></td>
 									<td></td>
 									<td>-10,000 EGP</td>
@@ -124,9 +113,10 @@
 
 																																<tr>
 									<td><span style="background-color: #d99694" class="dot"></span></td>
-									<td>12/12/2019</td>
-									<td>#512</td>
 									<td>Discount</td>
+									<td>#512</td>
+
+									<td>12/12/2019</td>
 									<td></td>
 									<td></td>
 									<td>-2,000 EGP</td>
@@ -136,9 +126,10 @@
 
 								<tr>
 									<td><span style="background-color: #c4bd97" class="dot"></span></td>
-									<td></td>
-									<td></td>
 									<td>Ending Balance</td>
+
+									<td></td>
+									<td></td>
 									<td></td>
 									<td></td>
 									<td>38,000 EGP</td>
@@ -152,99 +143,76 @@
 
 					</div>
 					<hr>
-					<div class="row clearfix">
-							<h5>Reasons for saying no:</h5>
-						</div>
-<div class="row">
-	<div class="col-lg-6 col-md-6" style="text-align: left;">
+					<br>
+					<br>
+					<br>
+					<div>
+					<div class="row clearfix" style="    width: 50em;
+    margin: 0 auto;
+">
+	
 
-							<div class="fancy-checkbox">
+										<div class="table-responsive">
+			<table class="table table-hover">
+							<thead class="thead-dark">
+								<tr>
+									
+									<th colspan="2" style="    text-align: center;">Check the reasons for saying no</th>
+									<!-- <th>Document Number</th> -->
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>					<div class="fancy-checkbox">
 								<label style="display: inline-block;"><input type="checkbox"><span>Difference in Payment</span></label>
-</div>
-							</div>
+</div></td>
+									<td>																<textarea rows="1" cols="50"></textarea></td>
 
-	<div class="col-lg-6 col-md-6" style="text-align: left;">
-
-																<textarea rows="1" cols="50"></textarea>
-
-</div>
+								</tr>
+								
 
 
-						</div>
-						<div class="row">
-	<div class="col-lg-6 col-md-6" style="text-align: left;">
-
-							<div class="fancy-checkbox">
+																<tr>
+									<td>					<div class="fancy-checkbox">
 								<label style="display: inline-block;"><input type="checkbox"><span>Difference in Amount</span></label>
-</div>
-							</div>
+</div></td>
+									<td>																<textarea rows="1" cols="50"></textarea></td>
 
-	<div class="col-lg-6 col-md-6" style="text-align: left;">
+								</tr>
 
-																<textarea rows="1" cols="50"></textarea>
-
-</div>
-
-
-						</div>
-						<div class="row">
-	<div class="col-lg-6 col-md-6" style="text-align: left;">
-
-							<div class="fancy-checkbox">
+																<tr>
+									<td>					<div class="fancy-checkbox">
 								<label style="display: inline-block;"><input type="checkbox"><span>Payment not documented</span></label>
-</div>
-							</div>
+</div></td>
+									<td>																<textarea rows="1" cols="50"></textarea></td>
 
-	<div class="col-lg-6 col-md-6" style="text-align: left;">
+								</tr>
 
-																<textarea rows="1" cols="50"></textarea>
-
-</div>
-
-
-						</div>
-						<div class="row">
-	<div class="col-lg-6 col-md-6" style="text-align: left;">
-
-							<div class="fancy-checkbox">
+																<tr>
+									<td>					<div class="fancy-checkbox">
 								<label style="display: inline-block;"><input type="checkbox"><span>Invoice not documented</span></label>
-</div>
-							</div>
+</div></td>
+									<td>																<textarea rows="1" cols="50"></textarea></td>
 
-	<div class="col-lg-6 col-md-6" style="text-align: left;">
+								</tr>
 
-																<textarea rows="1" cols="50"></textarea>
-
-</div>
-
-
-						</div>
-												<div class="row">
-	<div class="col-lg-6 col-md-6" style="text-align: left;">
-
-							<div class="fancy-checkbox">
+																<tr>
+									<td>					<div class="fancy-checkbox">
 								<label style="display: inline-block;"><input type="checkbox"><span>Other</span></label>
+</div></td>
+									<td>																<textarea rows="1" cols="50"></textarea></td>
+
+								</tr>
+
+							</tbody>
+						</table>
+
+					</div>
 </div>
-							</div>
-
-	<div class="col-lg-6 col-md-6" style="text-align: left;">
-
-																<textarea rows="1" cols="50"></textarea>
-
-</div>
-
-
-						</div>
-
-
-
-						</div>
-
 						<div class="hidden-print col-md-12 text-center">
 							<hr>
 							<!-- <button class="btn btn-outline-secondary mr-1"><i class="icon-printer"></i></button> -->
-							<button class="btn btn-primary" style="margin-right: 20px">Submit</button>
-							<button class="btn btn-primary mr-1">Close</button>
+							<button class="btn btn-primary" >Submit</button>
 						</div>
 					</div>
 				</div>

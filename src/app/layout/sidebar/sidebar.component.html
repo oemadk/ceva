@@ -6,13 +6,13 @@
                 <span>Welcome,</span>
                 <a href="javascript:void(0);" class="dropdown-toggle user-name" ngbDropdownToggle><strong>Mariam
                         Ahmed</strong></a>
-                <ul class="dropdown-menu dropdown-menu-right account" ngbDropdownMenu>
+<!--                 <ul class="dropdown-menu dropdown-menu-right account" ngbDropdownMenu>
                     <li><a [routerLink]="['/admin/pages/page-profile2']"><i class="icon-user"></i>My Profile</a></li>
                     <li><a [routerLink]="['/admin/app/app-inbox']"><i class="icon-envelope-open"></i>Messages</a></li>
                     <li><a href="javascript:void(0);"><i class="icon-settings"></i>Settings</a></li>
                     <li class="divider"></li>
                     <li><a [routerLink]="['/authentication/page-login']"><i class="icon-power"></i>Logout</a></li>
-                </ul>
+                </ul> -->
             </div>
             <hr>
 <!--             <ul class="row list-unstyled">
@@ -138,6 +138,10 @@
                             <a class="has-arrow" (click)="activeInactiveMenu('users')" [routerLink]="['/admin/tables/table-normal']"><i class="icon-tag"></i> <span>Customer Statement</span></a>
                         </li>
 
+                        <li [ngClass]="{'active':currentActiveMenu == 'users'}">
+                            <a class="has-arrow" (click)="activeInactiveMenu('users')" [routerLink]="['/admin/tables/table-normal']"><i class="icon-tag"></i> <span>Customer Feedback</span></a>
+                        </li>
+
 
                         <li [ngClass]="{'active':currentActiveMenu == 'tables'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('tables')"><i class="icon-tag"></i> <span>User Screens Demo</span></a>
@@ -146,6 +150,16 @@
                                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/admin/pages/page-invoices']">Show Details with add Comment Screen</a></li>
                             </ul>
                         </li>
+
+                                                <li [ngClass]="{'active':currentActiveMenu == 'users'}">
+                            <a class="has-arrow" (click)="activeInactiveMenu('users')" [routerLink]="['/admin/tables/table-normal']"><i class="icon-tag"></i> <span>Reports</span></a>
+                        </li>
+
+                                                <li [ngClass]="{'active':currentActiveMenu == 'users'}">
+                            <a class="has-arrow" (click)="activeInactiveMenu('users')" [routerLink]="['/admin/tables/table-normal']"><i class="icon-tag"></i> <span>Sales</span></a>
+                        </li>
+
+
 <!--                         <li [ngClass]="{'active':currentActiveMenu == 'charts'}">
                             <a class="has-arrow" (click)="activeInactiveMenu('charts')"><i class="icon-bar-chart"></i>
                                 <span>Charts</span></a>

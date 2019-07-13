@@ -8,12 +8,10 @@
 						<i class="fa fa-arrow-left" *ngIf="sidebarVisible"></i>
 						<i class="fa fa-arrow-right" *ngIf="!sidebarVisible"></i>
 					</a>
-					Invoices
+					Customer Statement Details
 				</h2>
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item"><a [routerLink]="['/admin']"><i class="icon-home"></i></a></li>
-					<li class="breadcrumb-item">Pages</li>
-					<li class="breadcrumb-item active">Invoices</li>
 				</ul>
 			</div>
 <!--             <div class="col-lg-7 col-md-4 col-sm-12 text-right">
@@ -61,23 +59,33 @@
 						</div>
 
 						<div class="info">
-							<h6>Client Name: Omar Emad El-Deen</h6>
-							<p>oemadk@gmail.com<br>
+							<h6>Omar Emad El-Deen</h6> 
+
+
+							<p>
 								011111204333</p>
 <!-- 							<h6>Project Description</h6>
 							<p>Proin cursus, dui non tincidunt elementum, tortor ex feugiat enim, at elementum enim quam vel purus.
 								Curabitur semper malesuada urna ut suscipit.</p> -->
 						</div>
-
+						<span>
+														<button *ngIf="openIt == 0" [disabled]="openIt == 0" class="btn btn-primary mr-1" style="display: inline-block; float: right;">Send SMS</button>
+														<button *ngIf="openIt == 1"   class="btn btn-primary mr-1" style="display: inline-block; float: right;">Send SMS</button>
+														<div style="display: inline-block;float: right;" class="fancy-checkbox">
+								<label><input (change)="yourfunc($event)" type="checkbox"><span style="    margin-top: 7px;">Approved</span></label>
+							</div>
+						</span>
 					</div>
+					<br>
 					<div class="table-responsive">
 						<table class="table table-hover">
 							<thead class="thead-dark">
 								<tr>
 									<th></th>
-									<th>Date</th>
+									<th>Document Type</th>
 									<th>Document Number</th>
-									<th>Statement</th>
+
+									<th>Date</th>
 									<th>Amount</th>
 									<th>Price</th>
 									<th >Total</th>
@@ -86,18 +94,20 @@
 							<tbody>
 								<tr>
 									<td><span style="background-color: #ffc000" class="dot"></span></td>
-									<td>12/12/2019</td>
-									<td>#512</td>
 									<td>Opening Balance</td>
+									<td>#512</td>
+
+									<td>12/12/2019</td>
 									<td></td>
 									<td></td>
 									<td>50,000 EGP</td>
 								</tr>
 								<tr>
 									<td><span style="background-color: #8eb4e3" class="dot"></span></td>
-									<td>12/12/2019</td>
-									<td>#512</td>
 									<td>Invoices</td>
+									<td>#512</td>
+
+									<td>12/12/2019</td>
 									<td>1</td>
 									<td>12,000 EGP</td>
 									<td>12,000 EGP</td>
@@ -106,9 +116,10 @@
 
 																																<tr>
 									<td><span style="background-color: #ffff00" class="dot"></span></td>
-									<td>12/12/2019</td>
-									<td>#512</td>
 									<td>Collection</td>
+									<td>#512</td>
+									
+									<td>12/12/2019</td>
 									<td></td>
 									<td></td>
 									<td>-10,000 EGP</td>
@@ -116,9 +127,10 @@
 
 																																<tr>
 									<td><span style="background-color: #d99694" class="dot"></span></td>
-									<td>12/12/2019</td>
-									<td>#512</td>
 									<td>Discount</td>
+									<td>#512</td>
+
+									<td>12/12/2019</td>
 									<td></td>
 									<td></td>
 									<td>-2,000 EGP</td>
@@ -126,9 +138,10 @@
 
 								<tr>
 									<td><span style="background-color: #c4bd97" class="dot"></span></td>
-									<td></td>
-									<td></td>
 									<td>Ending Balance</td>
+									<td>#512</td>
+
+									<td></td>
 									<td></td>
 									<td></td>
 									<td>38,000 EGP</td>
@@ -148,8 +161,7 @@
 						<div class="hidden-print col-md-12 text-center">
 							<hr>
 							<!-- <button class="btn btn-outline-secondary mr-1"><i class="icon-printer"></i></button> -->
-							<button class="btn btn-primary" style="margin-right: 20px">Approve</button>
-							<button class="btn btn-primary mr-1">Send SMS</button>
+
 						</div>
 					</div>
 				</div>

@@ -19,6 +19,7 @@ export class PageBlankComponent implements OnInit {
 	public visitorsOptions: EChartOption = {};
 	public visitsOptions: EChartOption = {};
 	public sidebarVisible: boolean = true;
+	public done = 0;
 
   form: FormGroup;
   error: string;
@@ -70,6 +71,11 @@ export class PageBlankComponent implements OnInit {
 	 this.discount = 0;
 	 this.collections = 0;
 	 this.endingBalance = 0;
+	}
+
+
+	public doneF(){
+		this.done  = 1;
 	}
 
 

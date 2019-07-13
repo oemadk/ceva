@@ -17,18 +17,24 @@ export class TableNormalComponent implements OnInit {
 
   settings = {
   columns: {
-    id: {
-      title: 'Code'
+    clientid: {
+      title: 'Customer ID'
     },
     name: {
       title: 'Customer Name'
     },
-    clientid: {
-      title: 'Customer ID'
-    },
+
 
     phone: {
       title: 'Phone'
+    },
+
+        openingBalance: {
+      title: 'Opening Balance'
+    },
+
+        endingBalance: {
+      title: 'Ending Balance'
     },
     status: {
       title: 'Status',
@@ -61,14 +67,18 @@ data = [
     name: "Omar Emad",
     status: "Approved",
     clientid: "142",
-    phone: "01111204333"
+    phone: "01111204333",
+    openingBalance:"1900 EGP",
+    endingBalance:"20000 EGP"
   },
   {
     id: 2,
     name: "Belal Tarek",
     status: "Pending",
     clientid: "1422",
-    phone: "011112043123"
+    phone: "011112043123",
+        openingBalance:"11240 EGP",
+    endingBalance:"24400 EGP"
   },
   
   
@@ -77,7 +87,9 @@ data = [
     name: "Ahmed Shafee",
     status: "Pending",
     clientid: "144",
-    phone: "0102312312"
+    phone: "0102312312",
+        openingBalance:"12200 EGP",
+    endingBalance:"28000 EGP"
   }
 ];
 
