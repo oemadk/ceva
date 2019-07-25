@@ -5,7 +5,7 @@ import { map } from  'rxjs/operators';
   providedIn: 'root'
 })
 export class UploadService {
-  SERVER_URL: string = "http://localhost:8000";
+  SERVER_URL: string = "http://http://52.33.55.199:80";
   constructor(private httpClient: HttpClient) { 
 
   }
@@ -140,12 +140,12 @@ export class UploadService {
    public s(data) {   
 
 
-    return this.httpClient.get<any>('http://127.0.0.1:8000/api/statements/' + data)
+    return this.httpClient.get<any>('http://52.33.55.199:80/api/statements/' + data)
 
 }
 
 public customerStatement(customer, month){
-      return this.httpClient.get<any>('http://127.0.0.1:8000/api/user/statement/' + customer+'/'+ month)
+      return this.httpClient.get<any>('http://52.33.55.199:80/api/user/statement/' + customer+'/'+ month)
 
 
 }
