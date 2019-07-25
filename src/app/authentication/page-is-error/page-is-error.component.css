@@ -4,5 +4,30 @@
   background-color: red;
   border-radius: 50%;
   display: inline-block;
-  
+  }
+.button-wrap {
+  text-align: center;
+  padding: 2rem;
 }
+
+button.explore {
+  padding: 15px 25px;
+  font: inherit;
+  background: linear-gradient(to right, #0267C1, #0280EF);
+  border-radius: 50px;
+  border: 0;
+  color: #fff;
+  margin: auto;
+  display: inline-block;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+button.explore:hover {
+  transform: translateY(-5px);
+    box-shadow: 0 15px 10px -7px rgba(0, 0, 0, .1);
+}
+
+
+
