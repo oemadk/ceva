@@ -2,13 +2,16 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { EChartOption } from 'echarts';
 import { SidebarService } from '../../services/sidebar.service';
 
+import {Router, ActivatedRoute} from '@angular/router';
+import { FormBuilder, FormGroup } from  '@angular/forms';
+import { UploadService } from  '../../services/upload.service';
 @Component({
 	selector: 'app-page-faq',
 	templateUrl: './page-faq.component.html',
 	styleUrls: ['./page-faq.component.css']
 })
 export class PageFaqComponent implements OnInit {
-
+	public allData;
 	public visitorsOptions: EChartOption = {};
 	public visitsOptions: EChartOption = {};
 	public sidebarVisible: boolean = true;
@@ -16,12 +19,22 @@ export class PageFaqComponent implements OnInit {
 	public openIt = 0;
 	myCheckbox;
 
-	constructor(private sidebarService: SidebarService, private cdr: ChangeDetectorRef) {
+	constructor(private route: ActivatedRoute
+,private uploadService: UploadService,private sidebarService: SidebarService, private cdr: ChangeDetectorRef) {
 		this.visitorsOptions = this.loadLineChartOptions([3, 5, 1, 6, 5, 4, 8, 3], "#49c5b6");
 		this.visitsOptions = this.loadLineChartOptions([4, 6, 3, 2, 5, 6, 5, 4], "#f4516c");
 	}
 
 	ngOnInit() {
+		  let customer_id = +this.route.snapshot.params['id1'];
+		  let month = +this.route.snapshot.params['id2'];
+
+  this.uploadService.customerStatement(customer_id, month).subscribe(
+         (res)=>{
+             console.log(res)
+             this.allData = res;
+    }  );
+	// console.log(id)	
 	}
 
 	toggleFullWidth() {

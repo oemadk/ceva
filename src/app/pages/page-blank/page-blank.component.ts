@@ -47,22 +47,78 @@ export class PageBlankComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    const formData = new FormData();
-    formData.append('file', this.form.get('avatar').value);
+  onSubmit(value) {
+
+
+if(value == 'openingbalance'){
+	    const formData = new FormData();
+    	formData.append('import_file', this.form.get('avatar').value);
 
     this.uploadService.upload(formData).subscribe(
       (res) => this.uploadResponse = res,
       (err) => this.error = err
     );
+}else if (value == 'endingbalance'){
+    	const formData = new FormData();
+    	formData.append('import_file', this.form.get('avatar').value);
+
+    this.uploadService.endingbalance(formData).subscribe(
+      (res) => this.uploadResponse = res,
+      (err) => this.error = err
+    );
+}else if(value == 'collectionbalance'){
+	    const formData = new FormData();
+	    formData.append('import_file', this.form.get('avatar').value);
+
+    this.uploadService.collectionbalance(formData).subscribe(
+      (res) => this.uploadResponse = res,
+      (err) => this.error = err
+    );
+}else if(value == 'discount'){
+	    const formData = new FormData();
+    	formData.append('import_file', this.form.get('avatar').value);
+
+    this.uploadService.discount(formData).subscribe(
+      (res) => this.uploadResponse = res,
+      (err) => this.error = err
+    );
+}else if(value == 'invoice'){
+	console.log('invoices')
+	    const formData = new FormData();
+    	formData.append('import_file', this.form.get('avatar').value);
+
+    this.uploadService.invoices(formData).subscribe(
+      (res) => this.uploadResponse = res,
+      (err) => this.error = err
+    );
+}else{
+		    const formData = new FormData();
+    	formData.append('import_file', this.form.get('avatar').value);
+
+    this.uploadService.upload(formData).subscribe(
+      (res) => this.uploadResponse = res,
+      (err) => this.error = err
+    );
+}
+
+
   }
 
 	public openingBalanceFunction(){
+	
 	 this.openingBalance = 1;
 	 this.invoices = 0;
 	 this.discount = 0;
 	 this.collections = 0;
 	 this.endingBalance = 0;
+	}
+
+
+	public makeStatements(){
+	this.uploadService.makestatements().subscribe(
+      (res) => this.uploadResponse = res,
+      (err) => this.error = err
+    );
 	}
 
 	public invoiceFunction(){
@@ -75,7 +131,12 @@ export class PageBlankComponent implements OnInit {
 
 
 	public doneF(){
-		this.done  = 1;
+			this.uploadService.makestatements().subscribe(
+      (res) => this.uploadResponse = res,
+      (err) => this.error = err
+    );
+					this.done  = 1;
+
 	}
 
 

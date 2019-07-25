@@ -59,7 +59,7 @@
 						</div>
 
 						<div class="info">
-							<h6>Omar Emad El-Deen</h6> 
+							<h6>{{allData.openingbalance['0'].customer_name}}</h6> 
 
 
 							<p>
@@ -95,56 +95,54 @@
 								<tr>
 									<td><span style="background-color: #ffc000" class="dot"></span></td>
 									<td>Opening Balance</td>
-									<td>#512</td>
+									<td>{{allData.openingbalance['0'].id}}</td>
 
-									<td>12/12/2019</td>
+									<td>{{allData.openingbalance['0'].opening_balance_date}}</td>
 									<td></td>
 									<td></td>
-									<td>50,000 EGP</td>
+									<td>{{allData.openingbalance['0'].opening_balance_amount}} EGP</td>
 								</tr>
-								<tr>
+								<tr *ngFor="let invoice of allData['invoice']">
 									<td><span style="background-color: #8eb4e3" class="dot"></span></td>
 									<td>Invoices</td>
-									<td>#512</td>
+									<td>#{{invoice.invoice_id}}</td>
 
-									<td>12/12/2019</td>
-									<td>1</td>
-									<td>12,000 EGP</td>
-									<td>12,000 EGP</td>
+									<td>{{invoice.invoice_date}}</td>
+									<td>{{invoice.amount}}</td>
+									<td>{{invoice.unit_price}} EGP</td>
+									<td>{{invoice.invoice_amount}}EGP</td>
 								</tr>
+								
 
-
-																																<tr>
+								<tr *ngFor="let collection of allData['collection']">
 									<td><span style="background-color: #ffff00" class="dot"></span></td>
 									<td>Collection</td>
-									<td>#512</td>
+									<td>{{collection.id}}</td>
 									
-									<td>12/12/2019</td>
+									<td>{{collection.collection_date}}</td>
 									<td></td>
 									<td></td>
-									<td>-10,000 EGP</td>
+									<td> {{collection.deposit_statement}}</td>
 								</tr>
-
-																																<tr>
+								
+								<tr *ngFor="let discount of allData['discount']">
 									<td><span style="background-color: #d99694" class="dot"></span></td>
 									<td>Discount</td>
-									<td>#512</td>
-
-									<td>12/12/2019</td>
+									<td>{{discount.id}}</td>
+									<td>{{discount.discount_date}}</td>
 									<td></td>
 									<td></td>
-									<td>-2,000 EGP</td>
+									<td>-{{discount.discount_amount}}</td>
 								</tr>
 
-								<tr>
+								<tr *ngFor="let ending of allData['endingbalance']">
 									<td><span style="background-color: #c4bd97" class="dot"></span></td>
 									<td>Ending Balance</td>
-									<td>#512</td>
-
+									<td>#{{ending.cutomer_id}}</td>
+									<td>{{ending.ending_balance_date}}</td>
 									<td></td>
 									<td></td>
-									<td></td>
-									<td>38,000 EGP</td>
+									<td>{{ending.ending_balance}}EGP</td>
 								</tr>
 
 

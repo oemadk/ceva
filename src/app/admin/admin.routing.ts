@@ -129,7 +129,7 @@ const routes: Routes = [
                     { path: 'page-projects-list', component: PageProjectsListComponent, data: { title: ':: Lucid Angular :: Pages :: Projects ::' } },
                     { path: 'page-maintenance', component: PageProjectsListComponent, data: { title: ':: Lucid Angular :: Pages :: Maintenance ::' } },
                     { path: 'page-testimonials', component: PageTestimonialsComponent, data: { title: ':: Lucid Angular :: Pages :: Testimonials ::' } },
-                    { path: 'page-faq', component: PageFaqComponent, data: { title: ':: Lucid Angular :: Pages :: Faq ::' } },
+                    { path: 'page-faq/:id1/:id2', component: PageFaqComponent, data: { title: ':: Lucid Angular :: Pages :: Faq ::' } },
                     
                 ]
             },

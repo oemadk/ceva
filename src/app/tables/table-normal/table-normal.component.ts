@@ -2,7 +2,8 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { EChartOption } from 'echarts';
 import { SidebarService } from '../../services/sidebar.service';
 import {Router} from '@angular/router';
-
+import { FormBuilder, FormGroup } from  '@angular/forms';
+import { UploadService } from  '../../services/upload.service';
 @Component({
   selector: 'app-table-normal',
   templateUrl: './table-normal.component.html',
@@ -17,10 +18,10 @@ export class TableNormalComponent implements OnInit {
 
   settings = {
   columns: {
-    clientid: {
+    cutomer_id: {
       title: 'Customer ID'
     },
-    name: {
+    customer_name: {
       title: 'Customer Name'
     },
 
@@ -29,24 +30,24 @@ export class TableNormalComponent implements OnInit {
       title: 'Phone'
     },
 
-        openingBalance: {
+        opening_balance: {
       title: 'Opening Balance'
     },
 
         endingBalance: {
       title: 'Ending Balance'
     },
-    status: {
+    statement_status: {
       title: 'Status',
       type: 'html',
       valuePrepareFunction: (data) => {
 
-          if(data == "Approved"){
-       return '<p  class="badge badge-success">' + data + '</p>'; }
+          if(data == 1){
+       return '<p  class="badge badge-success">' + 'Approved' + '</p>'; }
 
 
 
-       return '<p class="badge badge-warning">' + data + '</p>'; },
+       return '<p class="badge badge-warning">' + 'Pending' + '</p>'; },
 
 
     }
@@ -93,7 +94,7 @@ data = [
   }
 ];
 
-  constructor(private sidebarService: SidebarService, private cdr: ChangeDetectorRef, private router: Router) {
+  constructor(private sidebarService: SidebarService, private cdr: ChangeDetectorRef, private router: Router, private formBuilder: FormBuilder, private uploadService: UploadService) {
     this.visitorsOptions = this.loadLineChartOptions([3, 5, 1, 6, 5, 4, 8, 3], "#49c5b6");
     this.visitsOptions = this.loadLineChartOptions([4, 6, 3, 2, 5, 6, 5, 4], "#f4516c");
   }
@@ -101,12 +102,35 @@ data = [
 
 
   ngOnInit() {
+
+  this.uploadService.s(1).subscribe(
+         (res)=>{
+             console.log(res)
+             this.data = res['data'];
+    }  );
   }
 
+
+
+getMonth(month){
+  this.uploadService.s(month).subscribe(
+         (res)=>{
+             console.log(res)
+             this.data = res['data'];
+    }  );
+}
+
 onCustomAction(event) {
-  alert(`Custom event '${event.action}' fired on row №: ${event.data.id}`);
+  // alert(`Custom event '${event.action}' fired on row №: ${event.data.id}`);
   console.log(event)
-  this.router.navigate(['/admin/pages/page-faq']);
+  console.log(event.data.monthly_statement_date)
+
+  console.log(event.data.monthly_statement_date.toString().slice(5, 7))
+  let month =  event.data.monthly_statement_date.toString().slice(5, 7);
+  this.router.navigate(['/admin/pages/page-faq', event.data.cutomer_id, month]);
+
+  // this.router.navigate(['/admin/pages/page-faq'], { state: { example: 'bar' } });
+
 }
   toggleFullWidth() {
     this.sidebarService.toggle();
