@@ -54,8 +54,10 @@
 					</div>
 					<br>
 					<br>
-					<div class="table-responsive">
-			<table class="table table-hover">
+					<div class="table-responsive d-sm-block" *ngIf="!mobile"
+
+>
+			<table class="table table-hover d-sm-block">
 							<thead class="thead-dark">
 								<tr>
 									<th></th>
@@ -141,13 +143,135 @@
 							</tbody>
 						</table>
 
+
+
 					</div>
 					<hr>
 					<br>
 					<br>
 					<br>
 					<div>
-					<div class="row clearfix" style="    width: 50em;
+
+													<table class="table table-hover">
+							<thead class="thead-dark">
+								<tr>
+										<th colspan="2" style="text-align: center;">Document Type</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr (click)="openOpeningBlanceTable()">
+
+									<td colspan="2"><span style="background-color: #ffc000" class="dot"></span> Opening Balance</td>
+									
+
+								</tr>
+								<span *ngIf="openingbalance">
+									<tr>
+										<td></td>
+									<th>Document Number</th>
+
+									<td>#001</td>
+</tr>
+
+
+						<tr>
+										<td></td>
+									<th> Date</th>
+
+									<td>12/12/2019</td>
+</tr>
+
+
+
+<!--
+									<th>Amount</th>
+									<th>Price</th>
+									<th >Total</th>
+									<th>Remarks</th>
+-->
+						<tr>
+										<td></td>
+									<th>Document Number</th>
+
+									<td>#001</td>
+</tr>
+
+
+						<tr>
+										<td></td>
+									<th>Amount</th>
+
+									<td></td>
+</tr>
+
+						<tr>
+										<td></td>
+									<th>Price</th>
+
+									<td></td>
+</tr>
+
+						<tr>
+										<td></td>
+									<th>Total</th>
+
+									<td>12,000LE</td>
+</tr>
+
+						<tr>
+										<td></td>
+									<th>Remarks</th>
+
+									<td></td>
+</tr>
+<tr>
+	<td></td>
+	<td colspan="2"><textarea rows="2" cols="28"></textarea></td>
+</tr>
+
+
+
+								</span>
+														<!-- 		<tr>
+										<th>Document Type</th>
+
+									<td><span style="background-color: #8eb4e3" class="dot"></span> Invoices</td>
+									
+
+								</tr>
+																<tr>
+										<th>Document Type</th>
+
+									<td><span style="background-color: #ffff00" class="dot"></span> Collection</td>
+									
+
+								</tr>
+																<tr>
+										<th>Document Type</th>
+
+									<td><span style="background-color: #d99694" class="dot"></span> Discount</td>
+									
+
+								</tr>
+																<tr>
+										<th>Document Type</th>
+
+									<td><span style="background-color: #c4bd97" class="dot"></span> Ending Balance</td>
+									
+
+								</tr>
+								<tr>
+									<th>Document Number</th>
+									<td>#512</td>
+									
+								</tr>
+ -->
+
+							</tbody>
+						</table>
+
+					<div *ngIf="!mobile" class="row clearfix" style="    width: 50em;
     margin: 0 auto;
 ">
 	

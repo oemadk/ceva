@@ -13,14 +13,33 @@ export class PageInvoicesComponent implements OnInit {
   public visitsOptions: EChartOption = {};
   public sidebarVisible: boolean = true;
 
+  public openingbalance = 0;
+  public invoices = 0;
+  public collection = 0;
+  public discount = 0;
+  public endingbalance = 0;
+  public mobile = false;
+
   constructor(private sidebarService: SidebarService, private cdr: ChangeDetectorRef) {
     this.visitorsOptions = this.loadLineChartOptions([3, 5, 1, 6, 5, 4, 8, 3], "#49c5b6");
     this.visitsOptions = this.loadLineChartOptions([4, 6, 3, 2, 5, 6, 5, 4], "#f4516c");
+
+      if (window.screen.width === 360) { // 768px portrait
+    this.mobile = true;
+  }
   }
 
   ngOnInit() {
   }
 
+
+openOpeningBlanceTable(){
+  if (this.openingbalance == 0){
+    this.openingbalance = 1
+  }else{
+    this.openingbalance =0;
+  }
+}
   toggleFullWidth() {
     this.sidebarService.toggle();
     this.sidebarVisible = this.sidebarService.getStatus();
