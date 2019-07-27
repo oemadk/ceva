@@ -1,7 +1,7 @@
 
 
 
-import { Component, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectorRef, OnDestroy,OnInit } from '@angular/core';
 import { EChartOption } from 'echarts';
 import { SidebarService } from '../../services/sidebar.service';
 import { ActivatedRoute } from '@angular/router';
@@ -10,17 +10,20 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import 'hammerjs';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
-
+import {Router} from '@angular/router';
+import { FormBuilder, FormGroup } from  '@angular/forms';
+import { UploadService } from  '../../services/upload.service';
 @Component({
   selector: 'app-page-not-found',
   templateUrl: './page-not-found.component.html',
   styleUrls: ['./page-not-found.component.css']
 })
-export class PageNotFoundComponent implements OnDestroy {
+export class PageNotFoundComponent implements OnInit {
 
 	public visitorsOptions: EChartOption = {};
 	public visitsOptions: EChartOption = {};
     public sidebarVisible: boolean = true;
+    public allData;
     public galleryOptions: NgxGalleryOptions[];
     private _albums: Array<NgxGalleryImage> = new Array<NgxGalleryImage>();
     private _albumsTab1: Array<NgxGalleryImage> = new Array<NgxGalleryImage>();
@@ -30,7 +33,7 @@ export class PageNotFoundComponent implements OnDestroy {
     public fragment: string = "all";
     private ngUnsubscribe = new Subject();
 
-	constructor(private sidebarService: SidebarService, private cdr: ChangeDetectorRef, private activatedRoute: ActivatedRoute,private tabConfig: NgbTabsetConfig) {
+	constructor(private router: Router,private uploadService: UploadService,private sidebarService: SidebarService, private cdr: ChangeDetectorRef, private activatedRoute: ActivatedRoute,private tabConfig: NgbTabsetConfig) {
         this.activatedRoute.fragment.pipe(takeUntil(this.ngUnsubscribe)).subscribe((fragment: string) => {
 			if (fragment) {
 				this.fragment = fragment;
@@ -116,8 +119,31 @@ export class PageNotFoundComponent implements OnDestroy {
             };
 			this._albumsTab4.push(album);
 		}
+
     }
     
+	ngOnInit() {
+		  let customer_id = +this.activatedRoute.snapshot.params['id1'];
+		  let month = +this.activatedRoute.snapshot.params['id2'];
+
+  this.uploadService.customerStatement(customer_id, month).subscribe(
+         (res)=>{
+             console.log(res)
+             this.allData = res;
+    }  );
+	// console.log(id)	
+	}
+
+
+
+	submit(){
+				  let customer_id = +this.activatedRoute.snapshot.params['id1'];
+		  let month = +this.activatedRoute.snapshot.params['id2'];
+
+		  this.router.navigate(['/authentication/user/'+ customer_id + '/month/' + month+ '/disagree']);
+
+	}
+
     ngOnDestroy() {
         this.ngUnsubscribe.next();
         this.ngUnsubscribe.complete();

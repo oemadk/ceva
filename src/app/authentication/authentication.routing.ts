@@ -20,9 +20,9 @@ const routes: Routes = [
             { path: 'page-register', component: PageRegisterComponent, data: { title: 'Register :: Lucid Angular' } },
             { path: 'page-lockscreen', component: PageLockscreenComponent, data: { title: 'Lock Screen :: Lucid Angular' } },
             { path: 'page-forgot-password', component: PageForgotPasswordComponent, data: { title: 'Forgot Password :: Lucid Angular' } },
-            { path: 'page-404', component: PageNotFoundComponent, data: { title: 'Page-404 :: Lucid Angular' } },
+            { path: 'user/:id1/month/:id2', component: PageNotFoundComponent, data: { title: 'Page-404 :: Lucid Angular' } },
             { path: 'page-403', component: PageForbiddonErrorComponent, data: { title: 'Page-403 :: Lucid Angular' } },
-            { path: 'page-500', component: PageIsErrorComponent, data: { title: 'Page-500 :: Lucid Angular' } },
+            { path: 'user/:id1/month/:id2/disagree', component: PageIsErrorComponent, data: { title: 'Page-500 :: Lucid Angular' } },
             { path: 'page-503', component: PageTryLaterComponent, data: { title: 'Page-503 :: Lucid Angular' } },
             { path: 'page-maintanance', component: PageMaintananceComponent, data: { title: 'maintanance :: Lucid Angular' } },
         ]

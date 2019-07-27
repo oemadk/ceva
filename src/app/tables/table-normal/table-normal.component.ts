@@ -34,7 +34,7 @@ export class TableNormalComponent implements OnInit {
       title: 'Opening Balance'
     },
 
-        endingBalance: {
+        ending_balance: {
       title: 'Ending Balance'
     },
     statement_status: {

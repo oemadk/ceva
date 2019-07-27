@@ -70,7 +70,7 @@
 						</div>
 						<span>
 														<button *ngIf="openIt == 0" [disabled]="openIt == 0" class="btn btn-primary mr-1" style="display: inline-block; float: right;">Send SMS</button>
-														<button *ngIf="openIt == 1"   class="btn btn-primary mr-1" style="display: inline-block; float: right;">Send SMS</button>
+														<button (click)="sendsms()" *ngIf="openIt == 1"   class="btn btn-primary mr-1" style="display: inline-block; float: right;">Send SMS</button>
 														<div style="display: inline-block;float: right;" class="fancy-checkbox">
 								<label><input (change)="yourfunc($event)" type="checkbox"><span style="    margin-top: 7px;">Approved</span></label>
 							</div>

@@ -5,7 +5,7 @@ import { map } from  'rxjs/operators';
   providedIn: 'root'
 })
 export class UploadService {
-  SERVER_URL: string = "http://http://52.33.55.199:80";
+  SERVER_URL: string = "http://localhost:8000";
   constructor(private httpClient: HttpClient) { 
 
   }
@@ -135,17 +135,46 @@ export class UploadService {
     );
 }
 
+public sendsms(number,id,month){
+
+        return this.httpClient.get<any>('http://127.0.0.1:8000/api/send/sms/'+number+'/'+id+'/'+month)
+
+}
+
+public dueBalance(data){
+      let uploadURL = `${this.SERVER_URL}/api/importExcel6`;
+
+    return this.httpClient.post<any>(uploadURL, data, {
+      reportProgress: true,
+      observe: 'events'
+    }).pipe(map((event) => {
+
+      switch (event.type) {
+
+        case HttpEventType.UploadProgress:
+          const progress = Math.round(100 * event.loaded / event.total);
+          return { status: 'progress', message: progress };
+
+        case HttpEventType.Response:
+          return event.body;
+        default:
+          return `Unhandled event: ${event.type}`;
+      }
+    })
+    );
+}
+
 
 
    public s(data) {   
 
 
-    return this.httpClient.get<any>('http://52.33.55.199:80/api/statements/' + data)
+    return this.httpClient.get<any>('http://127.0.0.1:8000/api/statements/' + data)
 
 }
 
 public customerStatement(customer, month){
-      return this.httpClient.get<any>('http://52.33.55.199:80/api/user/statement/' + customer+'/'+ month)
+      return this.httpClient.get<any>('http://127.0.0.1:8000/api/user/statement/' + customer+'/'+ month)
 
 
 }

@@ -16,6 +16,7 @@ export class PageBlankComponent implements OnInit {
 	public discount = 0;
 	public collections = 0;
 	public endingBalance = 0;
+	public duebalance = 0;
 	public visitorsOptions: EChartOption = {};
 	public visitsOptions: EChartOption = {};
 	public sidebarVisible: boolean = true;
@@ -91,11 +92,12 @@ if(value == 'openingbalance'){
       (res) => this.uploadResponse = res,
       (err) => this.error = err
     );
-}else{
-		    const formData = new FormData();
+}else if(value == 'duebalance'){
+	console.log('invoices')
+	    const formData = new FormData();
     	formData.append('import_file', this.form.get('avatar').value);
 
-    this.uploadService.upload(formData).subscribe(
+    this.uploadService.dueBalance(formData).subscribe(
       (res) => this.uploadResponse = res,
       (err) => this.error = err
     );
@@ -111,6 +113,8 @@ if(value == 'openingbalance'){
 	 this.discount = 0;
 	 this.collections = 0;
 	 this.endingBalance = 0;
+	 this.duebalance = 0;
+
 	}
 
 
@@ -127,6 +131,17 @@ if(value == 'openingbalance'){
 	 this.discount = 0;
 	 this.collections = 0;
 	 this.endingBalance = 0;
+	 this.duebalance = 0;
+
+	}
+
+	public dueBalanceFunction(){
+			 this.openingBalance = 0;
+	 this.invoices = 0;
+	 this.discount = 0;
+	 this.collections = 0;
+	 this.endingBalance = 0;
+	 this.duebalance = 1;
 	}
 
 
@@ -146,6 +161,8 @@ if(value == 'openingbalance'){
 	 this.discount = 1;
 	 this.collections = 0;
 	 this.endingBalance = 0;
+	 this.duebalance = 0;
+
 	}
 
 
@@ -154,6 +171,8 @@ if(value == 'openingbalance'){
 	 this.invoices = 0;
 	 this.discount = 0;
 	 this.collections = 1;
+	 this.duebalance = 0;
+
 	 this.endingBalance = 0;
 	}
 
@@ -164,6 +183,8 @@ if(value == 'openingbalance'){
 	 this.discount = 0;
 	 this.collections = 0;
 	 this.endingBalance = 1;
+	 this.duebalance = 0;
+
 	}
 
 	toggleFullWidth() {

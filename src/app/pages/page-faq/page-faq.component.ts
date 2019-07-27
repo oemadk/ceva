@@ -63,6 +63,17 @@ export class PageFaqComponent implements OnInit {
 		console.log(this.openIt)
 	}
 
+	sendsms(){
+			let customer_id = +this.route.snapshot.params['id1'];
+		  let month = +this.route.snapshot.params['id2'];
+		  let number = '01111204333'
+	 this.uploadService.sendsms(number,customer_id,month).subscribe(
+         (res)=>{
+             console.log(res)
+             // this.allData = res;
+    }  );
+	}
+
 	loadLineChartOptions(data, color) {
 		let chartOption: EChartOption;
 		let xAxisData: Array<any> = new Array<any>();

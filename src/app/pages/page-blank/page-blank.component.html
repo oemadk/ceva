@@ -73,26 +73,22 @@
                			       <button *ngIf="endingBalance == 1" (click)="endingBalanceFunction()" type="button" class="btn btn-primary mr-1 l-grey custom">Ending Balance</button>
 
 <!-- Chnage it to the function of due balance-->
-               			      <button (click)="endingBalanceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Due Balance</button>
+               			      <button *ngIf="duebalance == 0" (click)="dueBalanceFunction()" type="button" class="btn btn-primary mr-1 l-blue custom">Due Balance</button>
+               			      <button *ngIf="duebalance == 1" (click)="dueBalanceFunction()" type="button" class="btn btn-primary mr-1 l-grey custom">Due Balance</button>
 						</div>
 <!--the buttons to change the view-->
 
 
 <!--opening balance view-->
 						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation"  style="border: solid 1px black; display:inline;margin-top: 0px;"        *ngIf="openingBalance">
-							 <div *ngIf="error">
-    {{ error.message }}
-  </div>
-   <div *ngIf="uploadResponse.status === 'error'">
-    {{ uploadResponse.message }}
-  </div>
 
 
-								<h1 style="    text-align: left;
-    text-decoration: underline;">Opening Balance</h1>
+
+								<h1 style="    text-align: center;
+    text-decoration: underline; font-size: 1.4em;">Opening Balance</h1>
 								<div class="input-group mb-3">
 									<div class="custom-file" style="display:inline">
-  <form [formGroup]="form" style="text-align:left; margin-bottom:40px; margin: 2em;" (ngSubmit)="onSubmit('openingbalance')">
+  <form [formGroup]="form" style="text-align:center;  margin: 2em;" (ngSubmit)="onSubmit('openingbalance')">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
     <button type="submit">Upload</button>
@@ -100,8 +96,14 @@
   </form>
 									</div>
 								</div>
+															 <div style="margin-top:3em" *ngIf="error">
+    {{ error.message }}
+  </div>
+   <div style="margin-top:3em" *ngIf="uploadResponse.status === 'error'">
+    {{ uploadResponse.message }}
+  </div>
 
-								  <div *ngIf="uploadResponse.status === 'progress'">
+								  <div style="margin-top:3em" *ngIf="uploadResponse.status === 'progress'">
 
 
  <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
@@ -110,19 +112,19 @@
 						</div>
 <!--opening balance view ends here-->
 
-						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black" style="display:inline"*ngIf="invoices">
-							 <div *ngIf="error">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black; display:inline;margin-top: 0px;" *ngIf="invoices">
+							 <div style="margin-top:3em" *ngIf="error">
     {{ error.message }}
   </div>
    <div *ngIf="uploadResponse.status === 'error'">
     {{ uploadResponse.message }}
   </div>
 
-								<h1 style="    text-align: left;
-    text-decoration: underline;">Invoices</h1>
+								<h1 style="    text-align: center;
+    text-decoration: underline; font-size: 1.4em;" >Invoices</h1>
 								<div class="input-group mb-3">
 									<div class="custom-file" style="display:inline">
-  <form [formGroup]="form" style="text-align:left; margin-bottom:40px; margin: 2em;" (ngSubmit)="onSubmit('invoice')">
+  <form [formGroup]="form" style="text-align:center; margin: 2em;" (ngSubmit)="onSubmit('invoice')">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
     <button type="submit">Upload</button>
@@ -131,7 +133,7 @@
 									</div>
 								</div>
 
-								  <div *ngIf="uploadResponse.status === 'progress'">
+								  <div style="margin-top:3em" *ngIf="uploadResponse.status === 'progress'">
 
 
  <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
@@ -140,76 +142,77 @@
 
 						</div>
 
-						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black" style="display:inline"*ngIf="discount">
-							 <div *ngIf="error">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black; display:inline;margin-top: 0px;"  *ngIf="discount">
+
+
+								<h1 style="    text-align: center;
+    text-decoration: underline; font-size: 1.4em;" >Discount</h1>
+								<div class="input-group mb-3">
+									<div class="custom-file" style="display:inline">
+  <form [formGroup]="form" style="text-align:center; margin: 2em;" (ngSubmit)="onSubmit('discount')">
+
+    <input type="file" name="avatar" (change)="onFileChange($event)" />
+    <button type="submit">Upload</button>
+
+  </form>
+									</div>
+								</div>
+															 <div style="margin-top:3em" *ngIf="error">
     {{ error.message }}
   </div>
    <div *ngIf="uploadResponse.status === 'error'">
     {{ uploadResponse.message }}
   </div>
-  <div *ngIf="uploadResponse.status === 'progress'">
+  <div style="margin-top:3em" *ngIf="uploadResponse.status === 'progress'">
+
+
+ <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
+
+  </div>
+						</div>
+
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black; display:inline;margin-top: 0px;" *ngIf="collections">
+							 <div style="margin-top:3em" *ngIf="error">
+    {{ error.message }}
+  </div>
+   <div *ngIf="uploadResponse.status === 'error'">
+    {{ uploadResponse.message }}
+  </div>
+
+								<h1 style="    text-align: center;
+    text-decoration: underline; font-size: 1.4em;" >Opening Balance</h1>
+								<div class="input-group mb-3">
+									<div class="custom-file" style="display:inline">
+  <form [formGroup]="form" style="text-align:center; margin: 2em;" (ngSubmit)="onSubmit('collectionbalance')">
+
+    <input type="file" name="avatar" (change)="onFileChange($event)" />
+    <button type="submit">Upload</button>
+
+  </form>
+									</div>
+								</div>
+								  <div style="margin-top:3em" *ngIf="uploadResponse.status === 'progress'">
 
 
  <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
 
   </div>
 
-								<h1 style="    text-align: left;
-    text-decoration: underline;">Discount</h1>
-								<div class="input-group mb-3">
-									<div class="custom-file" style="display:inline">
-  <form [formGroup]="form" style="text-align:left; margin-bottom:40px; margin: 2em;" (ngSubmit)="onSubmit('discount')">
-
-    <input type="file" name="avatar" (change)="onFileChange($event)" />
-    <button type="submit">Upload</button>
-
-  </form>
-									</div>
-								</div>
 						</div>
 
-						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black" style="display:inline"*ngIf="collections">
-							 <div *ngIf="error">
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black; display:inline;margin-top: 0px;" *ngIf="endingBalance">
+							 <div style="margin-top:3em" *ngIf="error">
     {{ error.message }}
   </div>
    <div *ngIf="uploadResponse.status === 'error'">
     {{ uploadResponse.message }}
   </div>
 
-								<h1 style="    text-align: left;
-    text-decoration: underline;">Opening Balance</h1>
+								<h1 style="    text-align: center;
+    text-decoration: underline; font-size: 1.4em;" >Ending Balance</h1>
 								<div class="input-group mb-3">
 									<div class="custom-file" style="display:inline">
-  <form [formGroup]="form" style="text-align:left; margin-bottom:40px; margin: 2em;" (ngSubmit)="onSubmit('collectionbalance')">
-
-    <input type="file" name="avatar" (change)="onFileChange($event)" />
-    <button type="submit">Upload</button>
-
-  </form>
-									</div>
-								</div>
-								  <div *ngIf="uploadResponse.status === 'progress'">
-
-
- <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
-
-  </div>
-
-						</div>
-
-						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black" style="display:inline"*ngIf="endingBalance">
-							 <div *ngIf="error">
-    {{ error.message }}
-  </div>
-   <div *ngIf="uploadResponse.status === 'error'">
-    {{ uploadResponse.message }}
-  </div>
-
-								<h1 style="    text-align: left;
-    text-decoration: underline;">Ending Balance</h1>
-								<div class="input-group mb-3">
-									<div class="custom-file" style="display:inline">
-  <form [formGroup]="form" style="text-align:left; margin-bottom:40px; margin: 2em;" (ngSubmit)="onSubmit('endingbalance')">
+  <form [formGroup]="form" style="text-align:center; margin: 2em;" (ngSubmit)="onSubmit('endingbalance')">
 
     <input type="file" name="avatar" (change)="onFileChange($event)" />
     <button type="submit">Upload</button>
@@ -218,7 +221,7 @@
 									</div>
 								</div>
 
-								  <div *ngIf="uploadResponse.status === 'progress'">
+								  <div style="margin-top:3em" *ngIf="uploadResponse.status === 'progress'">
 
 
  <!--     <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>-->
@@ -229,6 +232,60 @@
   </div>
 
 						</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						<div class="col-lg-9 col-md-9 col-xs-12 col-sm-12 animation" style="border: solid 1px black; display:inline;margin-top: 0px;" *ngIf="duebalance">
+							 <div style="margin-top:3em" *ngIf="error">
+    {{ error.message }}
+  </div>
+   <div *ngIf="uploadResponse.status === 'error'">
+    {{ uploadResponse.message }}
+  </div>
+
+								<h1 style="    text-align: center;
+    text-decoration: underline; font-size: 1.4em;" >Due Balance</h1>
+								<div class="input-group mb-3">
+									<div class="custom-file" style="display:inline">
+  <form [formGroup]="form" style="text-align:center; margin: 2em;" (ngSubmit)="onSubmit('duebalance')">
+
+    <input type="file" name="avatar" (change)="onFileChange($event)" />
+    <button type="submit">Upload</button>
+
+  </form>
+									</div>
+								</div>
+
+								  <div style="margin-top:3em" *ngIf="uploadResponse.status === 'progress'">
+
+
+ <!--     <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>-->
+
+            <p><ngb-progressbar type="danger" showValue="true" [striped]="true" [value]="uploadResponse.message" [animated]="true" height="20px"></ngb-progressbar></p>
+
+
+  </div>
+
+						</div>
+
+
+
+
+
+
 					</div> </div>
 			</div>
 		</div>

@@ -6,14 +6,14 @@
   </div>
   <div class="illustration">
     <div class="hgroup">
-    <span class="name">Hello, Ahmed Shafee</span>
+    <span class="name">Hello, {{allData['openingbalance']['0']['customer_name']}}</span>
     <h1>Ceva Confirmation System</h1>
     </div>
 <!--     <a href="https://ibb.co/kSxWRDz"><img src="https://i.ibb.co/mcGMLyd/undraw-super-thank-you-obwk.png" alt="undraw-super-thank-you-obwk" border="0"></a> -->
   </div>
 <!--   <span class="separator"></span> -->
   <div class="hgroup">
-    <p>Please revise your company's Balance at Ceva's at 12/12/2019
+    <p>Please revise your company's Balance at Ceva's at {{allData['duebalance']['0']['due_date']}}
       Which is 12,000 LE
   </p>
 
@@ -26,14 +26,14 @@
 </form>
       <span class="raised">Your Balance </span>
       <input type="text" name="">
-    <p>PLease note that the overdue that needs to be paid immediatley is  15,000 LE </p>
+    <p>PLease note that the overdue that needs to be paid immediatley is  {{allData['duebalance']['0']['overdue_balance']}} EGP </p>
     
-    <p>and the due balance this month is 12,000 <br>
+    <p>and the due balance this month is {{allData['duebalance']['0']['due_balance']}} EGP <br>
     </p>
     
   </div>
   <div class="button-wrap">
-  <button [routerLink]="['/authentication/page-500']" class="explore">
+  <button (click)="submit()" class="explore">
     Submit
   </button>  
   </div>
