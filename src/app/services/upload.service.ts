@@ -5,7 +5,7 @@ import { map } from  'rxjs/operators';
   providedIn: 'root'
 })
 export class UploadService {
-  SERVER_URL: string = "http://localhost:8000";
+  SERVER_URL: string = "http://13.53.177.139:4202";
   constructor(private httpClient: HttpClient) { 
 
   }
@@ -137,7 +137,7 @@ export class UploadService {
 
 public sendsms(number,id,month){
 
-        return this.httpClient.get<any>('http://127.0.0.1:8000/api/send/sms/'+number+'/'+id+'/'+month)
+        return this.httpClient.get<any>('http://13.53.177.139:4202/api/send/sms/'+number+'/'+id+'/'+month)
 
 }
 
@@ -169,12 +169,12 @@ public dueBalance(data){
    public s(data) {   
 
 
-    return this.httpClient.get<any>('http://127.0.0.1:8000/api/statements/' + data)
+    return this.httpClient.get<any>('http://13.53.177.139:4202/api/statements/' + data)
 
 }
 
 public customerStatement(customer, month){
-      return this.httpClient.get<any>('http://127.0.0.1:8000/api/user/statement/' + customer+'/'+ month)
+      return this.httpClient.get<any>('http://13.53.177.139:4202/api/user/statement/' + customer+'/'+ month)
 
 
 }
