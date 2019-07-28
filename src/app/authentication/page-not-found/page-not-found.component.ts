@@ -22,6 +22,8 @@ export class PageNotFoundComponent implements OnInit {
 
 	public visitorsOptions: EChartOption = {};
 	public visitsOptions: EChartOption = {};
+	public r1 =1;
+	public r2 = 0;
     public sidebarVisible: boolean = true;
     public allData;
     public galleryOptions: NgxGalleryOptions[];
@@ -155,6 +157,25 @@ export class PageNotFoundComponent implements OnInit {
 		this.cdr.detectChanges();
 	}
 
+
+
+  yourfunc1(value){
+ this.r1 = 1;
+ console.log(this.r1)
+  }
+
+
+
+
+  yourfunc2(value){
+ this.r1 = 0;
+ console.log(this.r1)
+ 
+  }
+
+submit2(){
+			  this.router.navigate(['/authentication/success']);
+}
 	loadLineChartOptions(data, color) {
 		let chartOption: EChartOption;
 		let xAxisData: Array<any> = new Array<any>();

@@ -1,5 +1,7 @@
 
 <div class="container" *ngIf="allData">
+		<form [formGroup] = "contactForm">
+
   <div class="logo" style="text-align: center; padding: 10px;"><img style="width: 5em;" src="assets/images/logo.png" alt="cc-logo" border="0">
   </div>
 
@@ -80,7 +82,9 @@
 </tr>
 <tr>
 	<td></td>
-	<td colspan="2"><textarea rows="2" cols="28"></textarea></td>
+		<input type="hidden" formControlName="opening_id" [ngModel]="allData.openingbalance['0']['id']">
+
+				<textarea formControlName="opening_comment" rows="2" cols="28"></textarea>
 </tr>
 
 
@@ -160,7 +164,10 @@
 </tr>
 <tr>
 	<td></td>
-	<td colspan="2"><textarea rows="2" cols="28"></textarea></td>
+
+		<input type="hidden" formControlName="invoice_id" [ngModel]="invoice.id">
+
+				<textarea formControlName="invoice_comment" rows="2" cols="28"></textarea>
 </tr>
 
 
@@ -241,7 +248,10 @@
 </tr>
 <tr>
 	<td></td>
-	<td colspan="2"><textarea rows="2" cols="28"></textarea></td>
+
+			<input type="hidden" formControlName="collection_id" [ngModel]="collection.id">
+
+				<textarea formControlName="collection_comment" rows="2" cols="28"></textarea>
 </tr>
 
 
@@ -311,7 +321,7 @@
 										<td></td>
 									<th>Total</th>
 
-									<td>1{{discount.discount_amount}}LE</td>
+									<td>{{discount.discount_amount}}LE</td>
 </tr>
 
 						<tr>
@@ -322,7 +332,16 @@
 </tr>
 <tr>
 	<td></td>
-	<td colspan="2"><textarea rows="2" cols="28"></textarea></td>
+		
+			<td colspan="2">
+		<input type="hidden" formControlName="discount_id" [ngModel]="discount.id">
+
+				<textarea formControlName="discount_comment" rows="2" cols="28"></textarea>
+
+
+
+			</td>
+
 </tr>
 
 
@@ -404,8 +423,13 @@
 									<td></td>
 </tr>
 <tr>
+
+
+
 	<td></td>
-	<td colspan="2"><textarea rows="2" cols="28"></textarea></td>
+				<input type="hidden" formControlName="endingbalance_id" [ngModel]="endingbalance.id">
+
+	<td colspan="2"><textarea formControlName="endingbalance_comment" rows="2" cols="28"></textarea></td>
 </tr>
 
 
@@ -414,72 +438,77 @@
 </span>
 							</tbody>
 						</table>
+  		</form>
 
 </div>
 
 
 <div>
 	<div class="container">
+				<form [formGroup] = "contactForm2">
+				<input type="hidden" formControlName="customer_statement_id" [ngModel]="allData.customerstatement['0'].id">
+
 		<h2  style="    padding: 12px;
     font-size: 1em; background-color: #343a40; color: white;
 ">Select the reasons for disagreeing:</h2>
 
 <div>
-<div  style="font-size: 1em;     padding-left: 39px;" class="fancy-checkbox">
-	<label style="display: inline-block;"><input  type="checkbox"><span>Difference in Payment</span></label>
-<!--  	<div *ngIf="m1">
- 	<textarea rows="2" cols="36"></textarea>
- 	</div> -->
 
-</div>
-
-</div>
-
-<div>
-<div style=" font-size: 1em;     padding-left: 39px;" class="fancy-checkbox">
-	<label style="display: inline-block;"><input type="checkbox"><span>Difference in Amount</span></label>
-<!--  	<div *ngIf="m2">
- 	<textarea rows="2" cols="36"></textarea>
+<div  style="font-size: 1em;     padding-left: 39px;" >
+	<label style="display: inline-block;"><input (change)="yourfunc($event)"  type="checkbox"><span>Difference in Payment</span></label>
+ 	<div *ngIf="r1">
+ 	<textarea formControlName="difference_in_payment_comment" rows="2" cols="36"></textarea>
  	</div>
- -->
-</div>
-
-</div>
-
-<div>
-<div style=" font-size: 1em;     padding-left: 39px;" class="fancy-checkbox">
-	<label style="display: inline-block;"><input type="checkbox"><span>Payment not documented</span></label>
-<!--  	<div *ngIf="m3">
- 	<textarea rows="2" cols="36"></textarea>
- 	</div> -->
 
 </div>
 
 </div>
 
 <div>
-<div style=" font-size: 1em;     padding-left: 39px;" class="fancy-checkbox">
-	<label style="display: inline-block;"><input type="checkbox"><span>Invoice not documented</span></label>
-<!--  	<div *ngIf="m4">
- 	<textarea rows="2" cols="36"></textarea>
- 	</div> -->
+<div style=" font-size: 1em;     padding-left: 39px;" >
+	<label style="display: inline-block;"><input  (change)="yourfunc2($event)" type="checkbox"><span>Difference in Amount</span></label>
+ 	<div *ngIf="r2">
+ 	<textarea formControlName="difference_in_amount_comment" rows="2" cols="36"></textarea>
+ 	</div>
 
 </div>
 
 </div>
 
 <div>
-<div style=" font-size: 1em;    padding-left: 39px;"  class="fancy-checkbox">
-	<label style="display: inline-block;"><input type="checkbox"><span>Other</span></label>
-<!--  	<div *ngIf="m5">
- 	<textarea rows="2" cols="36"></textarea>
- 	</div> -->
+<div style=" font-size: 1em;     padding-left: 39px;" >
+	<label style="display: inline-block;"><input (change)="yourfunc3($event)" type="checkbox"><span>Payment not documented</span></label>
+ 	<div *ngIf="r3">
+ 	<textarea formControlName="payment_not_documented_comment" rows="2" cols="36"></textarea>
+ 	</div>
 
 </div>
 
 </div>
 
-								
+<div>
+<div style=" font-size: 1em;     padding-left: 39px;" >
+	<label style="display: inline-block;"><input (change)="yourfunc4($event)" type="checkbox"><span>Invoice not documented</span></label>
+ 	<div *ngIf="r4">
+ 	<textarea formControlName="invoice_not_documented_comment" rows="2" cols="36"></textarea>
+ 	</div>
+
+</div>
+
+</div>
+
+<div>
+<div style=" font-size: 1em;    padding-left: 39px;"  >
+	<label style="display: inline-block;"><input (change)="yourfunc5($event)" type="checkbox"><span>Other</span></label>
+ 	<div *ngIf="r5">
+ 	<textarea formControlName="other_comment" rows="2" cols="36"></textarea>
+ 	</div>
+
+</div>
+
+</div>
+
+	</form>							
 </div>
 	</div>
 	
@@ -490,7 +519,8 @@
 
 
   <div class="button-wrap">
-  <button [routerLink]="['/authentication/page-500']" class="explore">
+
+  <button (click)="comments()" class="explore">
     Submit
   </button>  
   </div>

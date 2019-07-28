@@ -1,0 +1,78 @@
+<div class="container-fluid">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-5 col-md-8 col-sm-12">
+                <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"
+                        (click)="toggleFullWidth()">
+                        <i class="fa fa-arrow-left" *ngIf="sidebarVisible"></i>
+                        <i class="fa fa-arrow-right" *ngIf="!sidebarVisible"></i>
+                    </a> Customer Statement Feedback</h2>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/admin']"><i class="icon-home"></i></a></li>
+                    <li class="breadcrumb-item">Customers</li>
+                    <li class="breadcrumb-item ">Statements</li>
+                    <li class="breadcrumb-item active">Feedback</li>
+                </ul>
+            </div>
+<!--             <div class="col-lg-7 col-md-4 col-sm-12 text-right">
+                <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm pt-2">
+                    <div echarts [options]="visitorsOptions" class="echart-line-chart" [autoResize]="true" style="height: 20px;">
+                    </div>
+                    <span>Visitors</span>
+                </div>
+                <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm pt-2">
+                    <div echarts [options]="visitsOptions" class="echart-line-chart" [autoResize]="true" style="height: 20px;">
+                    </div>
+                    <span>Visits</span>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-lg-10 col-md-10 left-box ">
+            <div class="card">
+<!--                 <div class="header">
+                    <button style="display: inline-block;   float: left;"   type="button" class="btn btn-primary mr-1 l-grey custom">Send SMS for all approved statements</button>
+                </div> -->
+                <br>
+                <hr>
+<!-- 
+                <div style="text-align: center;">
+                    <form style="display: inline; text-align: center;">
+  Select (month and year): <input type="month" name="bdaymonth">
+  <input type="submit">
+</form>
+
+                </div> -->
+    <ng2-smart-table (custom)="onCustomAction($event)" [settings]="settings" [source]="data"></ng2-smart-table>
+
+
+            </div>
+        </div>
+                        <div class="col-lg-2 col-md-2 right-box ">
+            <div class="card sticky-top shadow-sm p-3 mb-5 bg-white rounded">
+                <div class="header">
+                    <h2>Date Filters</h2>
+                </div>
+                          <div class="list-group">
+                              <a (click)="getMonth(1)" href="javascript:void(0);" class="list-group-item list-group-item-action active">January - 2019</a>
+                              <a (click)="getMonth(2)" href="javascript:void(0);" class="list-group-item list-group-item-action">February - 2019</a>
+                              <a (click)="getMonth(3)" href="javascript:void(0);" class="list-group-item list-group-item-action">March - 2019</a>
+                              <a (click)="getMonth(4)" href="javascript:void(0);" class="list-group-item list-group-item-action ">April - 2019</a>
+                              <a (click)="getMonth(5)" href="javascript:void(0);" class="list-group-item list-group-item-action ">May - 2019</a>
+                              <a (click)="getMonth(6)" href="javascript:void(0);" class="list-group-item list-group-item-action ">June - 2019</a>
+                              <a (click)="getMonth(7)" href="javascript:void(0);" class="list-group-item list-group-item-action ">July - 2019</a>
+                              <a (click)="getMonth(8)" href="javascript:void(0);" class="list-group-item list-group-item-action ">August - 2019</a>
+                              <a (click)="getMonth(9)" href="javascript:void(0);" class="list-group-item list-group-item-action ">September - 2019</a>
+                              <a (click)="getMonth(10)" href="javascript:void(0);" class="list-group-item list-group-item-action ">October - 2019</a>
+                              <a (click)="getMonth(11)" href="javascript:void(0);" class="list-group-item list-group-item-action ">November - 2019</a>
+                              <a (click)="getMonth(12)" href="javascript:void(0);" class="list-group-item list-group-item-action ">December - 2019</a>
+                          </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

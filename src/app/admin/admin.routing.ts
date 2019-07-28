@@ -20,6 +20,7 @@ import { UiProgressbarsComponent } from '../ui-elements/ui-progressbars/ui-progr
 import { UiNotificationsComponent } from '../ui-elements/ui-notifications/ui-notifications.component';
 import { AppChatComponent } from '../applications/app-chat/app-chat.component';
 import { TableNormalComponent } from '../tables/table-normal/table-normal.component';
+import { TableNormallComponent } from '../tables/table-normall/table-normall.component';
 import { PageBlankComponent } from '../pages/page-blank/page-blank.component';
 import { PageProfileComponent } from '../pages/page-profile/page-profile.component';
 import { PageProfileV2Component } from '../pages/page-profile-v2/page-profile-v2.component';
@@ -34,6 +35,7 @@ import { PageTeamsBoardComponent } from '../pages/page-teams-board/page-teams-bo
 import { PageProjectsListComponent } from '../pages/page-projects-list/page-projects-list.component';
 import { PageTestimonialsComponent } from '../pages/page-testimonials/page-testimonials.component';
 import { PageFaqComponent } from '../pages/page-faq/page-faq.component';
+import { PageFaqqComponent } from '../pages/page-faqq/page-faqq.component';
 import { AppCalendarComponent } from '../applications/app-calendar/app-calendar.component';
 import { ChartEchartComponent } from '../charts/chart-echart/chart-echart.component';
 import { FormsValidationComponent } from '../form/forms-validation/forms-validation.component';
@@ -109,6 +111,7 @@ const routes: Routes = [
                 children: [
                     { path: '', redirectTo: 'table-normal', pathMatch: 'full' },
                     { path: 'table-normal', component: TableNormalComponent, data: { title: ':: Lucid Angular :: Tables :: Normal Tables ::' }  },
+                    { path: 'table-normall', component: TableNormallComponent, data: { title: ':: Lucid Angular :: Tables :: Normal Tables ::' }  },
                 ]
             },
             {
@@ -130,6 +133,7 @@ const routes: Routes = [
                     { path: 'page-maintenance', component: PageProjectsListComponent, data: { title: ':: Lucid Angular :: Pages :: Maintenance ::' } },
                     { path: 'page-testimonials', component: PageTestimonialsComponent, data: { title: ':: Lucid Angular :: Pages :: Testimonials ::' } },
                     { path: 'page-faq/:id1/:id2', component: PageFaqComponent, data: { title: ':: Lucid Angular :: Pages :: Faq ::' } },
+                    { path: 'page-faqq/:id1/:id2', component: PageFaqqComponent, data: { title: ':: Lucid Angular :: Pages :: Faq ::' } },
                     
                 ]
             },

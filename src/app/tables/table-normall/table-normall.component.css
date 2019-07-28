@@ -1,0 +1,11 @@
+@import "../../../assets/css/blog.css"
+
+:host /deep/ .cell_right {
+width:100%;
+height: 100%;
+text-align: right;
+}
+
+.ng2-smart-sort-link sort{
+color:green;
+}

@@ -12,7 +12,7 @@ import { PageIsErrorComponent } from './page-is-error/page-is-error.component';
 import { PageTryLaterComponent } from './page-try-later/page-try-later.component';
 import { PagesModule } from '../pages/pages.module';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 
 @NgModule({
 	declarations: [PageLoginComponent, AuthenticationComponent, PageRegisterComponent, PageLockscreenComponent, PageForgotPasswordComponent, PageNotFoundComponent, PageForbiddonErrorComponent, PageIsErrorComponent, PageTryLaterComponent],
@@ -21,7 +21,9 @@ import { FormsModule } from '@angular/forms';
 		routing,
 		PagesModule,
         RouterModule,
-        FormsModule
+        FormsModule,
+      ReactiveFormsModule,
+        
 	]
 })
 export class AuthenticationModule { }

@@ -14,6 +14,7 @@ import { PageTeamsBoardComponent } from './page-teams-board/page-teams-board.com
 import { PageProjectsListComponent } from './page-projects-list/page-projects-list.component';
 import { PageTestimonialsComponent } from './page-testimonials/page-testimonials.component';
 import { PageFaqComponent } from './page-faq/page-faq.component';
+import { PageFaqqComponent } from './page-faqq/page-faqq.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageMaintananceComponent } from './page-maintanance/page-maintanance.component';
 import { RouterModule } from '@angular/router';
@@ -40,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
 		PageProjectsListComponent,
 		PageTestimonialsComponent,
 		PageFaqComponent,
+		PageFaqqComponent,
 		PageMaintananceComponent
 	],
 	imports: [

@@ -18,11 +18,11 @@
   </p>
 
         <form>
-  <input type="checkbox" id="fruit1" name="fruit-1" value="Apple">
-  <label style="display: inline-block;" for="fruit1">Agree</label>
+  <input  (change)="yourfunc1($event)" type="radio" id="fruit1" name="fruit" value="Apple">
+  <label  style="display: inline-block;" for="fruit1">Agree</label>
 
-    <input type="checkbox" id="fruit2" name="fruit-2" value="no">
-  <label style="display: inline-block;" for="fruit2">Disagree</label>
+    <input (change)="yourfunc2($event)" type="radio" id="fruit2" name="fruit" value="no">
+  <label   style="display: inline-block;" for="fruit2">Disagree</label>
 </form>
       <span class="raised">Your Balance </span>
       <input type="text" name="">
@@ -33,7 +33,12 @@
     
   </div>
   <div class="button-wrap">
-  <button (click)="submit()" class="explore">
+  <button *ngIf="r1 == 0" (click)="submit()" class="explore">
+    Submit
+  </button>  
+
+
+    <button *ngIf="r1 == 1" (click)="submit2()" class="explore">
     Submit
   </button>  
   </div>

@@ -5,7 +5,7 @@ import { map } from  'rxjs/operators';
   providedIn: 'root'
 })
 export class UploadService {
-  SERVER_URL: string = "http://52.33.55.199";
+  SERVER_URL: string = "http://http://52.33.55.199";
   constructor(private httpClient: HttpClient) { 
 
   }
@@ -35,7 +35,7 @@ export class UploadService {
 
 
     public makestatements() {
-    let uploadURL = `http://52.33.55.199/api/makestatements`;
+    let uploadURL = `${this.SERVER_URL}/api/makestatements`;
 
     return this.httpClient.get<any>(uploadURL)
 }
@@ -173,9 +173,28 @@ public dueBalance(data){
 
 }
 
+   public s2(data) {   
+
+
+    return this.httpClient.get<any>('http://52.33.55.199/api/statements2/' + data)
+
+}
+
 public customerStatement(customer, month){
       return this.httpClient.get<any>('http://52.33.55.199/api/user/statement/' + customer+'/'+ month)
 
 
 }
+
+  public addComments(data){
+    let uploadURL = `${this.SERVER_URL}/api/add/comments`;
+
+    return this.httpClient.post(uploadURL,data);
+  }
+
+    public addComments2(data){
+    let uploadURL = `${this.SERVER_URL}/api/add/comments2`;
+
+    return this.httpClient.post(uploadURL,data);
+  }
 }

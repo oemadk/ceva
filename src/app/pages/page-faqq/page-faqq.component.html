@@ -1,0 +1,215 @@
+<div class="container-fluid">
+
+	<div class="block-header">
+		<div class="row">
+			<div class="col-lg-5 col-md-8 col-sm-12">
+				<h2>
+					<a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth" (click)="toggleFullWidth()">
+						<i class="fa fa-arrow-left" *ngIf="sidebarVisible"></i>
+						<i class="fa fa-arrow-right" *ngIf="!sidebarVisible"></i>
+					</a>
+					Customer Feedback Details
+				</h2>
+				<ul class="breadcrumb">
+					<li class="breadcrumb-item"><a [routerLink]="['/admin']"><i class="icon-home"></i></a></li>
+				</ul>
+			</div>
+<!--             <div class="col-lg-7 col-md-4 col-sm-12 text-right">
+                <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm pt-2">
+                    <div echarts [options]="visitorsOptions" class="echart-line-chart" [autoResize]="true" style="height: 20px;">
+                    </div>
+                    <span>Visitors</span>
+                </div>
+                <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm pt-2">
+                    <div echarts [options]="visitsOptions" class="echart-line-chart" [autoResize]="true" style="height: 20px;">
+                    </div>
+                    <span>Visits</span>
+                </div>
+            </div> -->
+		</div>
+	</div>
+
+	<div class="row clearfix">
+
+		<div class="col-lg-12 col-md-12">
+			<div class="card invoice1">
+				<div class="body">
+<!-- 					<div class="invoice-top clearfix">
+						<div class="logo">
+							<img src="assets/images/sm/avatar1.jpg" alt="user" class="rounded-circle img-fluid">
+						</div>
+						<div class="info">
+							<h6>Michael Truong</h6>
+							<p> hello@michaeltruong.ca <br>
+								289-335-6503
+							</p>
+						</div>
+						<div class="title">
+							<h4>Invoice #1069</h4>
+							<p>Issued: May 27, 2018<br>
+								Payment Due: June 27, 2018
+							</p>
+						</div>
+					</div> -->
+					<hr>
+					<div class="invoice-mid clearfix">
+
+						<div class="clientlogo">
+							<img src="assets/images/sm/avatar2.jpg" alt="user" class="rounded-circle img-fluid">
+						</div>
+
+						<div class="info">
+							<h6>{{allData.openingbalance['0'].customer_name}}</h6> 
+
+
+							<p>
+								011111204333</p>
+<!-- 							<h6>Project Description</h6>
+							<p>Proin cursus, dui non tincidunt elementum, tortor ex feugiat enim, at elementum enim quam vel purus.
+								Curabitur semper malesuada urna ut suscipit.</p> -->
+						</div>
+<!-- 						<span>
+														<button *ngIf="openIt == 0" [disabled]="openIt == 0" class="btn btn-primary mr-1" style="display: inline-block; float: right;">Send SMS</button>
+														<button (click)="sendsms()" *ngIf="openIt == 1"   class="btn btn-primary mr-1" style="display: inline-block; float: right;">Send SMS</button>
+														<div style="display: inline-block;float: right;" class="fancy-checkbox">
+								<label><input (change)="yourfunc($event)" type="checkbox"><span style="    margin-top: 7px;">Approved</span></label>
+							</div>
+						</span> -->
+					</div>
+					<br>
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<thead class="thead-dark">
+								<tr>
+									<th></th>
+									<th>Document Type</th>
+									<th>Document Number</th>
+
+									<th>Date</th>
+									<th>Amount</th>
+									<th>Price</th>
+									<th >Total</th>
+									<th >Feedback</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span style="background-color: #ffc000" class="dot"></span></td>
+									<td>Opening Balance</td>
+									<td>{{allData.openingbalance['0'].id}}</td>
+
+									<td>{{allData.openingbalance['0'].opening_balance_date}}</td>
+									<td></td>
+									<td></td>
+									<td>{{allData.openingbalance['0'].opening_balance_amount}} EGP</td>
+									<td>{{allData.openingbalance['0'].comment}}</td>
+								</tr>
+								<tr *ngFor="let invoice of allData['invoice']">
+									<td><span style="background-color: #8eb4e3" class="dot"></span></td>
+									<td>Invoices</td>
+									<td>#{{invoice.invoice_id}}</td>
+
+									<td>{{invoice.invoice_date}}</td>
+									<td>{{invoice.amount}}</td>
+									<td>{{invoice.unit_price}} EGP</td>
+									<td>{{invoice.invoice_amount}}EGP</td>
+									<td>{{invoice.invoice_comment}}</td>
+								</tr>
+								
+
+								<tr *ngFor="let collection of allData['collection']">
+									<td><span style="background-color: #ffff00" class="dot"></span></td>
+									<td>Collection</td>
+									<td>{{collection.id}}</td>
+									
+									<td>{{collection.collection_date}}</td>
+									<td></td>
+									<td></td>
+									<td> {{collection.deposit_statement}}</td>
+									<td> {{collection.collection_comment}}</td>
+								</tr>
+								
+								<tr *ngFor="let discount of allData['discount']">
+									<td><span style="background-color: #d99694" class="dot"></span></td>
+									<td>Discount</td>
+									<td>{{discount.id}}</td>
+									<td>{{discount.discount_date}}</td>
+									<td></td>
+									<td></td>
+									<td>-{{discount.discount_amount}}</td>
+									<td>-{{discount.discount_comment}}</td>
+								</tr>
+
+								<tr *ngFor="let ending of allData['endingbalance']">
+									<td><span style="background-color: #c4bd97" class="dot"></span></td>
+									<td>Ending Balance</td>
+									<td>#{{ending.cutomer_id}}</td>
+									<td>{{ending.ending_balance_date}}</td>
+									<td></td>
+									<td></td>
+									<td>{{ending.ending_balance}}EGP</td>
+									<td>{{ending.ending_balance_comment}}</td>
+								</tr>
+
+
+							</tbody>
+						</table>
+					</div>
+					<hr>
+
+
+
+
+						</div>
+
+						<div class="hidden-print col-md-12 text-center">
+							<hr>
+							<!-- <button class="btn btn-outline-secondary mr-1"><i class="icon-printer"></i></button> -->
+	<div *ngIf="allData['customerstatementcomments']['0']"  class="container" style="padding: 20px">
+			
+
+		<h2  style="    padding: 12px;
+    font-size: 1em; background-color: #343a40; color: white;
+">The reasons for disagreeing:</h2>
+
+<h5  *ngIf="allData['customerstatementcomments']['0']['difference_in_payment_comment']" style="text-align: left;  display: inline-block; float: left;"><b>Difference in Payment</b>:</h5>
+<input  *ngIf="allData['customerstatementcomments']['0']['difference_in_payment_comment']" style="display: inline-block; width: 100%" type="text" disabled value="{{allData['customerstatementcomments']['0']['difference_in_payment_comment']}}" name="">
+
+
+
+
+
+<h5  *ngIf="allData['customerstatementcomments']['0']['difference_in_amount_comment']" style="text-align: left;  display: inline-block; float: left;"><b>Difference in Amount</b>:</h5>
+<input  *ngIf="allData['customerstatementcomments']['0']['difference_in_amount_comment']" style="display: inline-block; width: 100%" type="text" disabled value="{{allData['customerstatementcomments']['0']['difference_in_amount_comment']}}" name="">
+
+
+<h5 *ngIf="allData['customerstatementcomments']['0']['payment_not_documented_comment']" style="text-align: left;  display: inline-block; float: left;"><b>Payment not documented</b>:</h5>
+<input  *ngIf="allData['customerstatementcomments']['0']['payment_not_documented_comment']" style="display: inline-block; width: 100%" type="text" disabled value="{{allData['customerstatementcomments']['0']['payment_not_documented_comment']}}" name="">
+
+
+<h5 *ngIf="allData['customerstatementcomments']['0']['invoice_not_documented_comment']" style="text-align: left;  display: inline-block; float: left;"><b>Invoice not documented</b>:</h5>
+<input  *ngIf="allData['customerstatementcomments']['0']['invoice_not_documented_comment']" style="display: inline-block; width: 100%" type="text" disabled value="{{allData['customerstatementcomments']['0']['invoice_not_documented_comment']}}" name="">
+
+
+
+
+<h5  *ngIf="allData['customerstatementcomments']['0']['other_comment']" style="text-align: left;  display: inline-block; float: left;"><b>Other</b>:</h5>
+<input  *ngIf="allData['customerstatementcomments']['0']['other_comment']" style="display: inline-block; width: 100%" type="text" disabled value="{{allData['customerstatementcomments']['0']['other_comment']}}" name="">
+
+
+
+
+
+
+
+
+
+</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- </div> -->
