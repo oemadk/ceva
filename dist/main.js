@@ -486,7 +486,7 @@ __webpack_require__.r(__webpack_exports__);
 var UploadService = /** @class */ (function () {
     function UploadService(httpClient) {
         this.httpClient = httpClient;
-        this.SERVER_URL = "http://http://52.33.55.199";
+        this.SERVER_URL = "http://52.33.55.199";
     }
     UploadService.prototype.upload = function (data) {
         var uploadURL = this.SERVER_URL + "/api/importExcel";

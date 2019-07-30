@@ -5,7 +5,7 @@ import { map } from  'rxjs/operators';
   providedIn: 'root'
 })
 export class UploadService {
-  SERVER_URL: string = "http://http://52.33.55.199";
+  SERVER_URL: string = "http://52.33.55.199";
   constructor(private httpClient: HttpClient) { 
 
   }
