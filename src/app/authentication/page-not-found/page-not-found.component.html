@@ -1,45 +1,49 @@
-<div class="container">
+<div class="container"  style="direction: rtl;">
   <div class="logo"><img style="width: 5em;" src="assets/images/logo.png" alt="cc-logo" border="0">
     <div class="c-name">
-      Ceva
+      
     </div>
   </div>
   <div class="illustration">
     <div class="hgroup">
-    <span class="name">Hello, {{allData['openingbalance']['0']['customer_name']}}</span>
-    <h1>Ceva Confirmation System</h1>
+    <span class="name" style="direction: rtl;">مرحبا
+, {{allData['openingbalance']['0']['customer_name']}}</span>
+    <h1>نظام تأكيد Ceva</h1>
     </div>
 <!--     <a href="https://ibb.co/kSxWRDz"><img src="https://i.ibb.co/mcGMLyd/undraw-super-thank-you-obwk.png" alt="undraw-super-thank-you-obwk" border="0"></a> -->
   </div>
 <!--   <span class="separator"></span> -->
   <div class="hgroup">
-    <p>Please revise your company's Balance at Ceva's at {{allData['duebalance']['0']['due_date']}}
-      Which is 12,000 LE
+    <p style="direction: rtl;" >يرجى مراجعة رصيدك  في  {{allData['duebalance']['0']['due_date']}}
+      وهو 12000 جنيه
+
   </p>
 
         <form>
   <input  (change)="yourfunc1($event)" type="radio" id="fruit1" name="fruit" value="Apple">
-  <label  style="display: inline-block;" for="fruit1">Agree</label>
+  <label  style="display: inline-block;" for="fruit1">موافق </label>
 
     <input (change)="yourfunc2($event)" type="radio" id="fruit2" name="fruit" value="no">
-  <label   style="display: inline-block;" for="fruit2">Disagree</label>
+  <label   style="display: inline-block;" for="fruit2">غير موافق</label>
 </form>
-      <span class="raised">Your Balance </span>
+      <span class="raised">رصيدك</span>
       <input type="text" name="">
-    <p>PLease note that the overdue that needs to be paid immediatley is  {{allData['duebalance']['0']['overdue_balance']}} EGP </p>
+    <p>يرجى ملاحظة أن المبلع المطلوب سدادو  هو
+  {{allData['duebalance']['0']['overdue_balance']}} جنيه </p>
     
-    <p>and the due balance this month is {{allData['duebalance']['0']['due_balance']}} EGP <br>
+    <p>والرصيد المستحق هذا الشهر هو
+ {{allData['duebalance']['0']['due_balance']}} جنيه <br>
     </p>
     
   </div>
   <div class="button-wrap">
   <button *ngIf="r1 == 0" (click)="submit()" class="explore">
-    Submit
+    إرسال
   </button>  
 
 
     <button *ngIf="r1 == 1" (click)="submit2()" class="explore">
-    Submit
+    إرسال
   </button>  
   </div>
 

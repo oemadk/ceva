@@ -137,13 +137,13 @@ const routes: Routes = [
                     
                 ]
             },
-            // {
-            //     path: 'charts',
-            //     children: [
-            //         { path: '', redirectTo: 'chart-echarts', pathMatch: 'full' },
-            //         { path: 'chart-echarts', component: ChartEchartComponent, data: { title: ':: Lucid Angular :: Charts :: E-Charts ::' } },
-            //     ]
-            // },
+            {
+                path: 'charts',
+                children: [
+                    { path: '', redirectTo: 'chart-echarts', pathMatch: 'full' },
+                    { path: 'chart-echarts', component: ChartEchartComponent, data: { title: ':: Lucid Angular :: Charts :: E-Charts ::' } },
+                ]
+            },
             {
                 path: 'forms',
                 children: [
