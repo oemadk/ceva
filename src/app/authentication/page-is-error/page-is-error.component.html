@@ -20,7 +20,8 @@
 							<tbody>
 								<tr (click)="openOpeningBlanceTable()">
 
-									<td colspan="1" style="text-align: right;"  ><i class="down"></i>  #1</td>
+									<td *ngIf="openingbalances" colspan="1" style="text-align: right;"  ><i class="down"></i>  #1</td>
+									<td *ngIf="!openingbalances" colspan="1" style="text-align: right;"  ><i class="left"></i>  #1</td>
 									<td colspan="1" style="text-align: right;"><span style="background-color: #ffc000" class="dot"></span> الرصيد الافتتاحي
 </td>
 
@@ -102,7 +103,7 @@
 	<td></td>
 <!-- 		<input type="hidden" formControlName="opening_id" [ngModel]="allData.openingbalance['0']['id']">
  -->
-				<textarea  style="text-align: right;"  formControlName="opening_comment" rows="2" cols="28"></textarea>
+				<textarea  style="text-align: right;"  formControlName="amount_user_wantsTo_pay_opening" rows="2" cols="28"></textarea>
 </tr>
 
 
@@ -119,7 +120,8 @@
 								<tr  (click)="openInvoices()">
 
 
-					<td  colspan="1" style="text-align: right;"><i class="down"></i>  #2</td>
+					<td *ngIf="invoices"  colspan="1" style="text-align: right;"><i class="down"></i>  #2</td>
+					<td *ngIf="!invoices"  colspan="1" style="text-align: right;"><i class="left"></i>  #2</td>
 									<td colspan="1" style="text-align: right;"><span style="background-color: #8eb4e3" class="dot"></span> الفواتير</td>
 
 									<td colspan="1">{{invoice.invoice_amount}}LE</td>
@@ -200,7 +202,7 @@
 	<td></td>
 <!-- 		<input type="hidden" formControlName="opening_id" [ngModel]="allData.openingbalance['0']['id']">
  -->
-				<textarea  style="text-align: right;" formControlName="opening_comment" rows="2" cols="28"></textarea>
+				<textarea  style="text-align: right;" formControlName="user_pays_invoices" rows="2" cols="28"></textarea>
 </tr>
 
 
@@ -216,7 +218,8 @@
 
 								<tr (click)="openCollection()">
 
-<td  colspan="1" style="text-align: right;"><i class="down"></i>  #3</td>
+<td *ngIf="collections"  colspan="1" style="text-align: right;"><i class="down"></i>  #3</td>
+<td *ngIf="!collections"  colspan="1" style="text-align: right;"><i class="left"></i>  #3</td>
 									<td colspan="1" style="text-align: right;"><span style="background-color: #ffff00" class="dot"></span> جمع الرصيد
 </td>
 
@@ -299,7 +302,7 @@
 	<td></td>
 <!-- 		<input type="hidden" formControlName="opening_id" [ngModel]="allData.openingbalance['0']['id']">
  -->
-				<textarea  style="text-align: right;" formControlName="opening_comment" rows="2" cols="28"></textarea>
+				<textarea  style="text-align: right;" formControlName="amount_user_wantsTo_pay_collections" rows="2" cols="28"></textarea>
 </tr>
 
 
@@ -315,7 +318,8 @@
 
 								<tr (click)="openDiscount()">
 
-<td  colspan="1" style="text-align: right;"><i class="down"></i>  #4</td>
+<td *ngIf="discounts"  colspan="1" style="text-align: right;"><i class="down"></i>  #4</td>
+<td *ngIf="!discounts"  colspan="1" style="text-align: right;"><i class="left"></i>  #4</td>
 									<td colspan="1" style="text-align: right;"><span style="background-color: #d99694" class="dot"></span> الخصومات</td>
 
 									<td colspan="1">-{{discount.discount_amount}}LE</td>
@@ -380,7 +384,7 @@
 <tr>
 	<td></td>
 		
-			<td colspan="2">
+			<td colspan="2" style="text-align: right;">
 		<input type="hidden" formControlName="discount_id" [ngModel]="discount.id">
 
 				<textarea  style="text-align: right;" formControlName="discount_comment" rows="2" cols="28"></textarea>
@@ -403,7 +407,7 @@
 	<td></td>
 <!-- 		<input type="hidden" formControlName="opening_id" [ngModel]="allData.openingbalance['0']['id']">
  -->
-				<textarea  style="text-align: right;" formControlName="opening_comment" rows="2" cols="28"></textarea>
+				<textarea  style="text-align: right;" formControlName="amount_user_wantsTo_pay_discounts" rows="2" cols="28"></textarea>
 </tr>
 
 
@@ -424,7 +428,8 @@
 
 									
 
-<td  colspan="1" style="text-align: right;"><i class="down"></i>  #5</td>
+<td *ngIf="endingbalances"  colspan="1" style="text-align: right;"><i class="down"></i>  #5</td>
+<td *ngIf="!endingbalances"  colspan="1" style="text-align: right;"><i class="left"></i>  #5</td>
 									<td colspan="1" style="text-align: right;"><span style="background-color: #c4bd97" class="dot"></span> الرصيد النهائي
 </td>
 
@@ -506,7 +511,7 @@
 	<td></td>
 <!-- 		<input type="hidden" formControlName="opening_id" [ngModel]="allData.openingbalance['0']['id']">
  -->
-				<textarea  style="text-align: right;" formControlName="opening_comment" rows="2" cols="28"></textarea>
+				<textarea  style="text-align: right;" formControlName="amount_user_wantsTo_pay" rows="2" cols="28"></textarea>
 </tr>
 
 
@@ -597,6 +602,6 @@
   <div class="button-wrap">
 
   <button (click)="comments()" class="explore">
-    Submit
+    إرسال 
   </button>  
   </div>

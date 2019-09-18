@@ -14,7 +14,7 @@ export class TableNormalComponent implements OnInit {
   public visitorsOptions: EChartOption = {};
   public visitsOptions: EChartOption = {};
   public sidebarVisible: boolean = true;
-
+  public isactive = 'one';
 
   settings = {
   columns: {
@@ -113,6 +113,31 @@ data = [
 
 
 getMonth(month){
+  if(month == 1){
+    this.isactive = 'one';
+  }else if(month ==2){
+    this.isactive = 'two';
+  }else if(month == 3){
+    this.isactive = 'three';
+  }else if(month ==4){
+    this.isactive = 'four';
+  }else if(month == 5){
+    this.isactive = 'five';
+  }else if(month ==6){
+    this.isactive = 'six';
+  }else if(month == 7){
+    this.isactive = 'seven';
+  }else if(month ==8){
+    this.isactive = 'eight';
+  }else if(month == 9){
+    this.isactive = 'nine';
+  }else if(month ==10){
+    this.isactive = 'ten';
+  }else if(month == 11){
+    this.isactive = 'eleven';
+  }else if(month ==12){
+    this.isactive = 'tewelve';
+  }
   this.uploadService.s(month).subscribe(
          (res)=>{
              console.log(res)

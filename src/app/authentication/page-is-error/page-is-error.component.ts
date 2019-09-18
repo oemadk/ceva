@@ -153,17 +153,26 @@ openEndingBalance(){
       this.contactForm = this.formGroup.group({
          discount_comment : ['', { validators: [Validators.required] }],
          discount_id : ['', { validators: [Validators.required] }],
+         amount_user_wantsTo_pay_discounts:['', { validators: [Validators.required] }],
+
               endingbalance_comment : ['', { validators: [Validators.required] }],
          endingbalance_id : ['', { validators: [Validators.required] }], 
+         //endingbalance
+           amount_user_wantsTo_pay : ['', { validators: [Validators.required] }], 
+
+
          invoice_comment : ['', { validators: [Validators.required] }],
          invoice_id : ['', { validators: [Validators.required] }],
+         user_pays_invoices : ['', { validators: [Validators.required] }],
 
           opening_comment : ['', { validators: [Validators.required] }],
          opening_id : ['', { validators: [Validators.required] }],
+         amount_user_wantsTo_pay_opening : ['', { validators: [Validators.required] }],
 
 
           collection_comment : ['', { validators: [Validators.required] }],
-         collection_id : ['', { validators: [Validators.required] }],
+          collection_id : ['', { validators: [Validators.required] }],
+          amount_user_wantsTo_pay_collections : ['', { validators: [Validators.required] }],
 
       })
 

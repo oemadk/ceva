@@ -102,7 +102,7 @@
 									<td></td>
 									<td>{{allData.openingbalance['0'].opening_balance_amount}} EGP</td>
 									<td>{{allData.openingbalance['0'].comment}}</td>
-									<td>0</td>
+									<td>{{allData.openingbalance['0'].amount_user_wantsTo_pay_opening}}</td>
 								</tr>
 								<tr *ngFor="let invoice of allData['invoice']">
 									<td><span style="background-color: #8eb4e3" class="dot"></span></td>
@@ -114,7 +114,7 @@
 									<td>{{invoice.unit_price}} EGP</td>
 									<td>{{invoice.invoice_amount}}EGP</td>
 									<td>{{invoice.invoice_comment}}</td>
-																		<td>0</td>
+									<td>{{invoice.user_pays_invoices}}</td>
 
 								</tr>
 								
@@ -129,7 +129,7 @@
 									<td></td>
 									<td> {{collection.deposit_statement}}</td>
 									<td> {{collection.collection_comment}}</td>
-																		<td>12,00</td>
+									<td>{{collection.amount_user_wantsTo_pay_collections}}</td>
 
 								</tr>
 								
@@ -141,8 +141,8 @@
 									<td></td>
 									<td></td>
 									<td>-{{discount.discount_amount}}</td>
-									<td>-{{discount.discount_comment}}</td>
-																		<td>0</td>
+									<td>{{discount.discount_comment}}</td>
+									<td>{{discount.amount_user_wantsTo_pay_discounts}}</td>
 
 								</tr>
 
@@ -155,7 +155,7 @@
 									<td></td>
 									<td>{{ending.ending_balance}}EGP</td>
 									<td>{{ending.ending_balance_comment}}</td>
-																		<td>0</td>
+									<td>{{ending.amount_user_wantsTo_pay}}</td>
 
 								</tr>
 

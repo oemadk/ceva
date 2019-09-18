@@ -29,13 +29,57 @@
     </div>
 
     <div class="row ">
-        <div class="col-lg-10 col-md-10 left-box ">
+        <div class="col-lg-12 col-md-12  ">
             <div class="card">
                 <div class="header">
                     <button style="display: inline-block;   float: left;"   type="button" class="btn btn-primary mr-1 l-grey custom">Send SMS for all approved statements</button>
                 </div>
-                <br>
-                <hr>
+
+                              <div class="card sticky-top shadow-sm p-3 mb-5 bg-white rounded">
+                <div class="header">
+                    <h2>Date Filters</h2>
+                </div>
+                          <div class="list-group" style="display: inline-block; width: 100%;">
+
+                              <a *ngIf="isactive != 'one'" style="display: inline-block; width: 8.33333%;" (click)="getMonth(1)" href="javascript:void(0);" class="list-group-item list-group-item-action ">January </a>
+                              <a *ngIf="isactive == 'one'" style="display: inline-block; width: 8.33333%;" (click)="getMonth(1)" href="javascript:void(0);" class="list-group-item list-group-item-action active">January </a>
+                              
+                              <a  *ngIf="isactive != 'two'" style="display: inline-block; width: 8.33333%;"   (click)="getMonth(2)" href="javascript:void(0);" class="list-group-item list-group-item-action">February </a>
+                              <a  *ngIf="isactive == 'two'" style="display: inline-block; width: 8.33333%;"   (click)="getMonth(2)" href="javascript:void(0);" class="list-group-item list-group-item-action active">February </a>
+
+
+                              <a  *ngIf="isactive != 'three'" style="display: inline-block; width: 8.33333%;"   (click)="getMonth(3)" href="javascript:void(0);" class="list-group-item list-group-item-action">March </a>
+                              <a *ngIf="isactive == 'three'" style="display: inline-block; width: 8.33333%;"   (click)="getMonth(3)" href="javascript:void(0);" class="list-group-item list-group-item-action active">March </a>
+
+                              <a  *ngIf="isactive != 'four'" style="display: inline-block; width: 8.33333%;"   (click)="getMonth(4)" href="javascript:void(0);" class="list-group-item list-group-item-action ">April </a>
+                              <a *ngIf="isactive == 'four'" style="display: inline-block; width: 8.33333%;"   (click)="getMonth(4)" href="javascript:void(0);" class="list-group-item list-group-item-action active ">April </a>
+
+                              <a  *ngIf="isactive != 'five'" style="display: inline-block; width: 8.33333%;"  (click)="getMonth(5)" href="javascript:void(0);" class="list-group-item list-group-item-action ">May </a>
+                              <a *ngIf="isactive == 'five'" style="display: inline-block; width: 8.33333%;"  (click)="getMonth(5)" href="javascript:void(0);" class="list-group-item list-group-item-action active">May </a>
+
+                              <a  *ngIf="isactive != 'six'"  style="display: inline-block; width: 8.33333%;"  (click)="getMonth(6)" href="javascript:void(0);" class="list-group-item list-group-item-action ">June </a>
+                              <a  *ngIf="isactive == 'six'"  style="display: inline-block; width: 8.33333%;"  (click)="getMonth(6)" href="javascript:void(0);" class="list-group-item list-group-item-action active ">June </a>
+
+                              <a  *ngIf="isactive != 'seven'"  style="display: inline-block; width: 8.33333%;"  (click)="getMonth(7)" href="javascript:void(0);" class="list-group-item list-group-item-action ">July </a>
+                              <a  *ngIf="isactive == 'seven'" style="display: inline-block; width: 8.33333%;"  (click)="getMonth(7)" href="javascript:void(0);" class="list-group-item list-group-item-action active">July </a>
+
+                              <a  *ngIf="isactive != 'eight'"  style="display: inline-block; width: 8.33333%;"  (click)="getMonth(8)" href="javascript:void(0);" class="list-group-item list-group-item-action ">August </a>
+                              <a *ngIf="isactive == 'eight'" style="display: inline-block; width: 8.33333%;"  (click)="getMonth(8)" href="javascript:void(0);" class="list-group-item list-group-item-action active">August </a>
+
+                              <a  *ngIf="isactive != 'nine'"  style="display: inline-block; width: 8.33333%;"  (click)="getMonth(9)" href="javascript:void(0);" class="list-group-item list-group-item-action ">September </a>
+                              <a *ngIf="isactive == 'nine'" style="display: inline-block; width: 8.33333%;"  (click)="getMonth(9)" href="javascript:void(0);" class="list-group-item list-group-item-action active">September </a>
+
+                              <a  *ngIf="isactive != 'ten'" style="display: inline-block; width: 8.33333%;"   (click)="getMonth(10)" href="javascript:void(0);" class="list-group-item list-group-item-action ">October </a>
+                              <a *ngIf="isactive == 'ten'" style="display: inline-block; width: 8.33333%;"   (click)="getMonth(10)" href="javascript:void(0);" class="list-group-item list-group-item-action active">October </a>
+
+                              <a  *ngIf="isactive != 'eleven'" style="display: inline-block; width: 8.33333%;"   (click)="getMonth(11)" href="javascript:void(0);" class="list-group-item list-group-item-action ">November </a>
+                              <a *ngIf="isactive == 'eleven'" style="display: inline-block; width: 8.33333%;"   (click)="getMonth(11)" href="javascript:void(0);" class="list-group-item list-group-item-action active">November </a>
+
+                              <a  *ngIf="isactive != 'tewelve'"  style="display: inline-block; width: 8.33333%;"  (click)="getMonth(12)" href="javascript:void(0);" class="list-group-item list-group-item-action ">December </a>
+                              <a *ngIf="isactive == 'tewelve'" style="display: inline-block; width: 8.33333%;"  (click)="getMonth(12)" href="javascript:void(0);" class="list-group-item list-group-item-action active ">December </a>
+                          </div>
+            </div>
+        
 <!-- 
                 <div style="text-align: center;">
                     <form style="display: inline; text-align: center;">
@@ -49,27 +93,27 @@
 
             </div>
         </div>
-                        <div class="col-lg-2 col-md-2 right-box ">
+<!--                         <div class="col-lg-2 col-md-2 right-box ">
             <div class="card sticky-top shadow-sm p-3 mb-5 bg-white rounded">
                 <div class="header">
                     <h2>Date Filters</h2>
                 </div>
                           <div class="list-group">
-                              <a (click)="getMonth(1)" href="javascript:void(0);" class="list-group-item list-group-item-action active">January - 2019</a>
-                              <a (click)="getMonth(2)" href="javascript:void(0);" class="list-group-item list-group-item-action">February - 2019</a>
-                              <a (click)="getMonth(3)" href="javascript:void(0);" class="list-group-item list-group-item-action">March - 2019</a>
-                              <a (click)="getMonth(4)" href="javascript:void(0);" class="list-group-item list-group-item-action ">April - 2019</a>
-                              <a (click)="getMonth(5)" href="javascript:void(0);" class="list-group-item list-group-item-action ">May - 2019</a>
-                              <a (click)="getMonth(6)" href="javascript:void(0);" class="list-group-item list-group-item-action ">June - 2019</a>
-                              <a (click)="getMonth(7)" href="javascript:void(0);" class="list-group-item list-group-item-action ">July - 2019</a>
-                              <a (click)="getMonth(8)" href="javascript:void(0);" class="list-group-item list-group-item-action ">August - 2019</a>
-                              <a (click)="getMonth(9)" href="javascript:void(0);" class="list-group-item list-group-item-action ">September - 2019</a>
-                              <a (click)="getMonth(10)" href="javascript:void(0);" class="list-group-item list-group-item-action ">October - 2019</a>
-                              <a (click)="getMonth(11)" href="javascript:void(0);" class="list-group-item list-group-item-action ">November - 2019</a>
-                              <a (click)="getMonth(12)" href="javascript:void(0);" class="list-group-item list-group-item-action ">December - 2019</a>
+                              <a (click)="getMonth(1)" href="javascript:void(0);" class="list-group-item list-group-item-action active">January </a>
+                              <a (click)="getMonth(2)" href="javascript:void(0);" class="list-group-item list-group-item-action">February </a>
+                              <a (click)="getMonth(3)" href="javascript:void(0);" class="list-group-item list-group-item-action">March </a>
+                              <a (click)="getMonth(4)" href="javascript:void(0);" class="list-group-item list-group-item-action ">April </a>
+                              <a (click)="getMonth(5)" href="javascript:void(0);" class="list-group-item list-group-item-action ">May </a>
+                              <a (click)="getMonth(6)" href="javascript:void(0);" class="list-group-item list-group-item-action ">June </a>
+                              <a (click)="getMonth(7)" href="javascript:void(0);" class="list-group-item list-group-item-action ">July </a>
+                              <a (click)="getMonth(8)" href="javascript:void(0);" class="list-group-item list-group-item-action ">August </a>
+                              <a (click)="getMonth(9)" href="javascript:void(0);" class="list-group-item list-group-item-action ">September </a>
+                              <a (click)="getMonth(10)" href="javascript:void(0);" class="list-group-item list-group-item-action ">October </a>
+                              <a (click)="getMonth(11)" href="javascript:void(0);" class="list-group-item list-group-item-action ">November </a>
+                              <a (click)="getMonth(12)" href="javascript:void(0);" class="list-group-item list-group-item-action ">December </a>
                           </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 
