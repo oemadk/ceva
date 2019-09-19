@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import { UploadService } from  '../../services/upload.service';
 import { FormControl, FormGroup, FormBuilder,FormArray, Validators } from '@angular/forms';
+ import { ResponsiveModule } from 'ngx-responsive'
 
 @Component({
   selector: 'app-page-is-error',

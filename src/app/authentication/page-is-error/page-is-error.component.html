@@ -1,5 +1,11 @@
+<div class="container" [responsive-window]="'parent'">
+<div  
 
-<div class="container" *ngIf="allData" style="direction: rtl;">
+*responsive="{
+                          device: 'mobile'
+            }"
+            >
+<div  class="container" *ngIf="allData" style="direction: rtl; ">
 		<form [formGroup] = "contactForm">
 
   <div class="logo" style="text-align: center; padding: 10px;"><img style="width: 5em;" src="assets/images/logo.png" alt="cc-logo" border="0">
@@ -522,12 +528,132 @@
   		</form>
 
 </div>
+</div>
 
+
+
+<div *responsive="{
+                          device: 'desktop'
+            }" >
+	
+	<div *ngIf="allData">
+		
+	
+		<form [formGroup] = "contactForm">
+
+					<div  class="table-responsive" style="direction: rtl;">
+						<table class="table table-hover" style="direction: rtl; text-align: right;">
+							<thead class="thead-dark">
+								<tr>
+									<th></th>
+									<th>نوع الوثيقة</th>
+									<th>رقم المستند</th>
+
+									<th>تاريخ</th>
+									<th>الكميه</th>
+									<th>السعر</th>
+									<th >المجموع</th>
+									<th >تعليق</th>
+									<th >المبلغ الذي تعتقد أنه يجب عليك دفعه؟></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span style="background-color: #ffc000" class="dot"></span></td>
+									<td>الرصيد الافتتاحي</td>
+									<td>{{allData.openingbalance['0']['id']}}</td>
+
+									<td>{{allData.openingbalance['0'].opening_balance_date}}</td>
+									<td></td>
+									<td>		<input type="hidden" formControlName="opening_id" [ngModel]="allData.openingbalance['0']['id']">
+</td>
+									<td>{{allData.openingbalance['0'].opening_balance_amount}} EGP</td>
+									<td>				<textarea formControlName="opening_comment" rows="2" cols="28"></textarea>
+</td>
+									<td>				<textarea  style="text-align: right;"  formControlName="amount_user_wantsTo_pay_opening" rows="2" cols="28"></textarea>
+</td>
+								</tr>
+								<tr *ngFor="let invoice of allData['invoice']">
+									<td><span style="background-color: #8eb4e3" class="dot"></span></td>
+									<td>الفواتير</td>
+									<td>#{{invoice.invoice_id}}</td>
+
+									<td>{{invoice.invoice_date}}</td>
+									<td>{{invoice.amount}}</td>
+									<td>{{invoice.unit_price}} EGP</td>
+									<td>{{invoice.invoice_amount}}EGP</td>
+											<input type="hidden" formControlName="invoice_id" [ngModel]="invoice.id">
+
+									<td>				<textarea  style="text-align: right;" formControlName="invoice_comment" rows="2" cols="28"></textarea>
+</td>
+
+									<td>				<textarea  style="text-align: right;" formControlName="user_pays_invoices" rows="2" cols="28"></textarea>
+</td>
+
+								</tr>
+								
+
+								<tr *ngFor="let collection of allData['collection']">
+									<td><span style="background-color: #ffff00" class="dot"></span></td>
+									<td>جمع الرصيد</td>
+									<td>{{collection.id}}</td>
+									
+									<td>{{collection.collection_date}}</td>
+									<td>			<input type="hidden" formControlName="collection_id" [ngModel]="collection.id">
+</td>
+									<td></td>
+									<td> {{collection.deposit_statement}}</td>
+									<td> 				<textarea  style="text-align: right;" formControlName="collection_comment" rows="2" cols="28"></textarea>
+</td>
+									<td><textarea  style="text-align: right;" formControlName="amount_user_wantsTo_pay_collections" rows="2" cols="28"></textarea></td>
+
+								</tr>
+								
+								<tr *ngFor="let discount of allData['discount']">
+									<td><span style="background-color: #d99694" class="dot"></span></td>
+									<td>الخصومات</td>
+									<td>{{discount.id}}</td>
+									<td>{{discount.discount_date}}</td>
+									<td>		<input type="hidden" formControlName="discount_id" [ngModel]="discount.id">
+</td>
+									<td></td>
+									<td>-{{discount.discount_amount}}</td>
+									<td>				<textarea  style="text-align: right;" formControlName="discount_comment" rows="2" cols="28"></textarea>
+</td>
+									<td>				<textarea  style="text-align: right;" formControlName="amount_user_wantsTo_pay_discounts" rows="2" cols="28"></textarea>
+</td>
+
+								</tr>
+
+								<tr *ngFor="let ending of allData['endingbalance']">
+									<td><span style="background-color: #c4bd97" class="dot"></span></td>
+									<td>الرصيد النهائي</td>
+									<td>#{{ending.cutomer_id}}</td>
+									<td>{{ending.ending_balance_date}}</td>
+									<td>				<input type="hidden" formControlName="endingbalance_id" [ngModel]="ending['id']">
+</td>
+									<td></td>
+									<td>{{ending.ending_balance}}EGP</td>
+									<td><textarea  style="text-align: right;" formControlName="endingbalance_comment" rows="2" cols="28"></textarea></td>
+									<td>				<textarea  style="text-align: right;" formControlName="amount_user_wantsTo_pay" rows="2" cols="28"></textarea>
+</td>
+
+								</tr>
+
+
+							</tbody>
+						</table>
+					</div>
+				</form>
+				</div>
+
+</div>
+</div>
 
 <div>
-	<div class="container" style="direction: rtl;">
+	<div class="container" style="direction: rtl;" *ngIf="allData">
 				<form [formGroup] = "contactForm2">
-				<input type="hidden" formControlName="customer_statement_id" [ngModel]="allData.customerstatement['0'].id">
+				<input type="hidden" formControlName="customer_statement_id" [ngModel]="allData.customerstatement.id">
 
 		<h2  style="    padding: 12px;
     font-size: 1em; background-color: #343a40; color: white; text-align: right;

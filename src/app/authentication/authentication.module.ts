@@ -13,6 +13,7 @@ import { PageTryLaterComponent } from './page-try-later/page-try-later.component
 import { PagesModule } from '../pages/pages.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
+ import { ResponsiveModule } from 'ngx-responsive'
 
 @NgModule({
 	declarations: [PageLoginComponent, AuthenticationComponent, PageRegisterComponent, PageLockscreenComponent, PageForgotPasswordComponent, PageNotFoundComponent, PageForbiddonErrorComponent, PageIsErrorComponent, PageTryLaterComponent],
@@ -23,6 +24,7 @@ import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
         RouterModule,
         FormsModule,
       ReactiveFormsModule,
+      ResponsiveModule
         
 	]
 })

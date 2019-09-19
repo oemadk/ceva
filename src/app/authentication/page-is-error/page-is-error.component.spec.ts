@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageIsErrorComponent } from './page-is-error.component';
+ import { ResponsiveModule } from 'ngx-responsive'
 
 describe('PageIsErrorComponent', () => {
   let component: PageIsErrorComponent;

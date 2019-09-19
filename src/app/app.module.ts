@@ -15,6 +15,7 @@ import { UploadService } from './services/upload.service'
 import * as $ from 'jquery';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { ResponsiveModule } from 'ngx-responsive'
 
 @NgModule({
     declarations: [
@@ -33,7 +34,9 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
         LeafletModule.forRoot(),
         NgxGalleryModule,
             ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+          ResponsiveModule.forRoot()
+
     ],
     providers: [
     UploadService
