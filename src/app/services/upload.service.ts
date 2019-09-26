@@ -32,8 +32,6 @@ export class UploadService {
     })
     );
 }
-
-
     public makestatements() {
     let uploadURL = `${this.SERVER_URL}/api/makestatements`;
 
@@ -135,6 +133,30 @@ export class UploadService {
     );
 }
 
+   public addsales(data) {
+    let uploadURL = `${this.SERVER_URL}/api/import/sales`;
+
+    return this.httpClient.post<any>(uploadURL, data, {
+      reportProgress: true,
+      observe: 'events'
+    }).pipe(map((event) => {
+
+      switch (event.type) {
+
+        case HttpEventType.UploadProgress:
+          const progress = Math.round(100 * event.loaded / event.total);
+          return { status: 'progress', message: progress };
+
+        case HttpEventType.Response:
+          return event.body;
+        default:
+          return `Unhandled event: ${event.type}`;
+      }
+    })
+    );
+}
+
+
 public sendsms(number,id,month){
 
         return this.httpClient.get<any>('http://3.82.49.221/api/send/sms/'+number+'/'+id+'/'+month)
@@ -172,6 +194,12 @@ public dueBalance(data){
     return this.httpClient.get<any>('http://3.82.49.221/api/statements/' + data)
 
 }
+
+
+  public salesUsersList(){
+        return this.httpClient.get<any>('http://3.82.49.221/api/sales/users/all')
+
+  }
 
    public s2(data) {   
 

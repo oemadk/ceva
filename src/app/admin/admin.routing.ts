@@ -21,6 +21,7 @@ import { UiNotificationsComponent } from '../ui-elements/ui-notifications/ui-not
 import { AppChatComponent } from '../applications/app-chat/app-chat.component';
 import { TableNormalComponent } from '../tables/table-normal/table-normal.component';
 import { TableNormallComponent } from '../tables/table-normall/table-normall.component';
+import { TableNormalllComponent } from '../tables/table-normalll/table-normalll.component';
 import { PageBlankComponent } from '../pages/page-blank/page-blank.component';
 import { PageProfileComponent } from '../pages/page-profile/page-profile.component';
 import { PageProfileV2Component } from '../pages/page-profile-v2/page-profile-v2.component';
@@ -112,6 +113,7 @@ const routes: Routes = [
                     { path: '', redirectTo: 'table-normal', pathMatch: 'full' },
                     { path: 'table-normal', component: TableNormalComponent, data: { title: ':: Lucid Angular :: Tables :: Normal Tables ::' }  },
                     { path: 'table-normall', component: TableNormallComponent, data: { title: ':: Lucid Angular :: Tables :: Normal Tables ::' }  },
+                    { path: 'sales', component: TableNormalllComponent, data: { title: ':: Lucid Angular :: Tables :: Normal Tables ::' }  },
                 ]
             },
             {

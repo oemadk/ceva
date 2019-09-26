@@ -1,218 +1,151 @@
 <div class="container" [responsive-window]="'parent'">
-<div  
-
-*responsive="{
-                          device: 'mobile'
-            }"
-            >
+<div  *responsive="{device: 'mobile'}">
 <div  class="container" *ngIf="allData" style="direction: rtl; ">
 		<form [formGroup] = "contactForm">
-
   <div class="logo" style="text-align: center; padding: 10px;"><img style="width: 5em;" src="assets/images/logo.png" alt="cc-logo" border="0">
   </div>
-
   <br>
+	<table class="table table-hover">
+		<thead class="thead-dark">
+			<tr>
+				<th colspan="1" style="text-align: center;">الكود </th>
+				<th colspan="1" style="text-align: center;">نوع الوثيقة</th>
+				<th colspan="2" style="text-align: center;">إجمالي</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr (click)="openOpeningBlanceTable()">
 
-													<table class="table table-hover">
-							<thead class="thead-dark">
-								<tr>
-										<th colspan="1" style="text-align: center;">الكود </th>
-										<th colspan="1" style="text-align: center;">نوع الوثيقة
-</th>
-										<th colspan="2" style="text-align: center;">إجمالي</th>
-
-								</tr>
-							</thead>
-							<tbody>
-								<tr (click)="openOpeningBlanceTable()">
-
-									<td *ngIf="openingbalances" colspan="1" style="text-align: right;"  ><i class="down"></i>  #1</td>
-									<td *ngIf="!openingbalances" colspan="1" style="text-align: right;"  ><i class="left"></i>  #1</td>
-									<td colspan="1" style="text-align: right;"><span style="background-color: #ffc000" class="dot"></span> الرصيد الافتتاحي
-</td>
-
-									<td colspan="1">{{allData.openingbalance['0']['opening_balance_amount']}}LE</td>
+				<td *ngIf="openingbalances" colspan="1" style="text-align: right;"  ><i class="down"></i>  #1</td>
+				<td *ngIf="!openingbalances" colspan="1" style="text-align: right;"  ><i class="left"></i>  #1</td>
+				<td colspan="1" style="text-align: right;"><span style="background-color: #ffc000" class="dot"></span> الرصيد الافتتاحي</td>
+				<td colspan="1">{{allData.openingbalance['0']['opening_balance_amount']}}LE</td>
 									
 
-								</tr>
-								<div style="    display: contents;" *ngIf="openingbalances">
-									<tr>
-										<td></td>
-									<th style="text-align: right;">رقم المستند</th>
+			</tr>
+			<div style="display: contents;" *ngIf="openingbalances">
+				<tr>
+					<td></td>
+						<th style="text-align: right;">رقم المستند</th>
+						<td>{{allData.openingbalance['0']['id']}}</td>
+				</tr>
 
-									<td>{{allData.openingbalance['0']['id']}}</td>
-</tr>
+				<tr>
+					<td></td>
+					<th  style="text-align: right;"> تاريخ</th>
+					<td>{{allData.openingbalance['0']['opening_balance_date']}}</td>
+				</tr>
 
+				<tr>
+					<td></td>
+					<th  style="text-align: right;">الكميه</th>
+					<td></td>
+				</tr>
 
-						<tr>
-										<td></td>
-									<th  style="text-align: right;"> تاريخ</th>
+				<tr>
+					<td></td>
+					<th  style="text-align: right;">السعر</th>
+					<td></td>
+				</tr>
 
-									<td>{{allData.openingbalance['0']['opening_balance_date']}}</td>
-</tr>
+				<tr>
+					<td></td>
+					<th  style="text-align: right;">المجموع</th>
+					<td>{{allData.openingbalance['0']['opening_balance_amount']}}LE</td>
+				</tr>
 
+				<tr>
+					<td></td>
+					<th  style="text-align: right;">تعليق</th>
+					<td></td>
+				</tr>
 
-
-<!--
-									<th>Amount</th>
-									<th>Price</th>
-									<th >Total</th>
-									<th>تعليق</th>
--->
-
-
-
-						<tr>
-										<td></td>
-									<th  style="text-align: right;">الكميه</th>
-
-									<td></td>
-</tr>
-
-						<tr>
-										<td></td>
-									<th  style="text-align: right;">السعر</th>
-
-									<td></td>
-</tr>
-
-						<tr>
-										<td></td>
-									<th  style="text-align: right;">المجموع</th>
-
-									<td>{{allData.openingbalance['0']['opening_balance_amount']}}LE</td>
-</tr>
-
-						<tr>
-										<td></td>
-									<th  style="text-align: right;">تعليق</th>
-
-									<td></td>
-</tr>
-<tr>
-	<td></td>
-		<input type="hidden" formControlName="opening_id" [ngModel]="allData.openingbalance['0']['id']">
-
-				<textarea formControlName="opening_comment" rows="2" cols="28"></textarea>
-</tr>
-
-
-
-
-<tr>
-										<td></td>
-									<th  style="text-align: right;">المبلغ الذي تعتقد أنه يجب عليك دفعه؟</th>
-
-									<td></td>
-</tr>
-<tr>
-	<td></td>
-<!-- 		<input type="hidden" formControlName="opening_id" [ngModel]="allData.openingbalance['0']['id']">
- -->
-				<textarea  style="text-align: right;"  formControlName="amount_user_wantsTo_pay_opening" rows="2" cols="28"></textarea>
-</tr>
-
-
-
-								</div>
-
-
-
-
-
-
-<!--Invoices-->
-<span style="    display: contents;" *ngFor="let invoice of allData['invoice']">
-								<tr  (click)="openInvoices()">
-
-
+				<tr>
+					<td></td>
+					<input type="hidden" formControlName="opening_id" [ngModel]="allData.openingbalance['0']['id']">
+					<textarea formControlName="opening_comment" rows="2" cols="28"></textarea>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<th  style="text-align: right;">المبلغ الذي تعتقد أنه يجب عليك دفعه؟</th>
+					<td></td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<textarea  style="text-align: right;"  formControlName="amount_user_wantsTo_pay_opening" rows="2" cols="28"></textarea>
+				</tr>
+			</div>
+			
+			<!--Invoices-->
+			
+			<span style="    display: contents;" *ngFor="let invoice of allData['invoice']">
+				<tr  (click)="openInvoices()">
 					<td *ngIf="invoices"  colspan="1" style="text-align: right;"><i class="down"></i>  #2</td>
 					<td *ngIf="!invoices"  colspan="1" style="text-align: right;"><i class="left"></i>  #2</td>
-									<td colspan="1" style="text-align: right;"><span style="background-color: #8eb4e3" class="dot"></span> الفواتير</td>
+					<td colspan="1" style="text-align: right;"><span style="background-color: #8eb4e3" class="dot"></span> الفواتير</td>
+					<td colspan="1">{{invoice.invoice_amount}}LE</td>
+				</tr>
+				<span style="display: contents;" *ngIf="invoices">
+					<tr>
+						<td></td>
+						<th  style="text-align: right;">رقم المستند</th>
+						<td>#{{invoice.invoice_id}}</td>
+					</tr>
 
-									<td colspan="1">{{invoice.invoice_amount}}LE</td>
-									
-									
+					<tr>
+						<td></td>
+						<th  style="text-align: right;"> التاريخ</th>
+						<td>{{invoice.invoice_date}}</td>
+					</tr>
 
-								</tr>
-								<span style="    display: contents;" *ngIf="invoices">
-									<tr>
-										<td></td>
-									<th  style="text-align: right;">رقم المستند</th>
+					<tr>
+						<td></td>
+						<th  style="text-align: right;">الكميه</th>
+						<td>{{invoice.amount}}</td>
+					</tr>
+				
+					<tr>
+						<td></td>
+						<th  style="text-align: right;">السعر</th>
+						<td>{{invoice.unit_price}}</td>
+					</tr>
 
-									<td>#{{invoice.invoice_id}}</td>
-</tr>
+					<tr>
+						<td></td>
+						<th  style="text-align: right;">المجموع</th>
+						<td>{{invoice.invoice_amount}}LE</td>
+					</tr>
 
-
-						<tr>
-										<td></td>
-									<th  style="text-align: right;"> التاريخ</th>
-
-									<td>{{invoice.invoice_date}}</td>
-</tr>
-
-
-
-<!--
-									<th>Amount</th>
-									<th>Price</th>
-									<th >Total</th>
-									<th>تعليق</th>
--->
-
-
-						<tr>
-										<td></td>
-									<th  style="text-align: right;">الكميه</th>
-
-									<td>{{invoice.amount}}</td>
-</tr>
-
-						<tr>
-										<td></td>
-									<th  style="text-align: right;">السعر</th>
-
-									<td>{{invoice.unit_price}}</td>
-</tr>
-
-						<tr>
-										<td></td>
-									<th  style="text-align: right;">المجموع</th>
-
-									<td>{{invoice.invoice_amount}}LE</td>
-</tr>
-
-						<tr>
-										<td></td>
-									<th  style="text-align: right;">تعليق</th>
-
-									<td></td>
-</tr>
-<tr>
-	<td></td>
-
-		<input type="hidden" formControlName="invoice_id" [ngModel]="invoice.id">
-
-				<textarea  style="text-align: right;" formControlName="invoice_comment" rows="2" cols="28"></textarea>
-</tr>
+					<tr>
+						<td></td>
+						<th  style="text-align: right;">تعليق</th>
+						<td></td>
+					</tr>
+				
+					<tr>
+						<td></td>
+						<input type="hidden" formControlName="invoice_id" [ngModel]="invoice.id">
+						<textarea  style="text-align: right;" formControlName="invoice_comment" rows="2" cols="28"></textarea>
+					</tr>
 
 
+					<tr>
+						<td></td>
+						<th  style="text-align: right;">المبلغ الذي تعتقد أنه يجب عليك دفعه؟</th>
+						<td></td>
+					</tr>
+				
 
-<tr>
-										<td></td>
-									<th  style="text-align: right;">المبلغ الذي تعتقد أنه يجب عليك دفعه؟</th>
-
-									<td></td>
-</tr>
-<tr>
-	<td></td>
-<!-- 		<input type="hidden" formControlName="opening_id" [ngModel]="allData.openingbalance['0']['id']">
- -->
-				<textarea  style="text-align: right;" formControlName="user_pays_invoices" rows="2" cols="28"></textarea>
-</tr>
+					<tr>
+						<td></td>
+						<textarea  style="text-align: right;" formControlName="user_pays_invoices" rows="2" cols="28"></textarea>
+					</tr>
 
 
-								</span>
+				</span>
 </span>
 
 <!--invoices-->

@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-5 col-md-8 col-sm-12">
+                <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"
+                        (click)="toggleFullWidth()">
+                        <i class="fa fa-arrow-left" *ngIf="sidebarVisible"></i>
+                        <i class="fa fa-arrow-right" *ngIf="!sidebarVisible"></i>
+                    </a> Sales Accounts</h2>
+            </div>
+<!--             <div class="col-lg-7 col-md-4 col-sm-12 text-right">
+                <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm pt-2">
+                    <div echarts [options]="visitorsOptions" class="echart-line-chart" [autoResize]="true" style="height: 20px;">
+                    </div>
+                    <span>Visitors</span>
+                </div>
+                <div class="inlineblock text-center m-r-15 m-l-15 hidden-sm pt-2">
+                    <div echarts [options]="visitsOptions" class="echart-line-chart" [autoResize]="true" style="height: 20px;">
+                    </div>
+                    <span>Visits</span>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-lg-10 col-md-10 left-box ">
+            <div class="card">
+<!--                 <div class="header">
+                    <button style="display: inline-block;   float: left;"   type="button" class="btn btn-primary mr-1 l-grey custom">Send SMS for all approved statements</button>
+                </div> -->
+                <br>
+                <hr>
+<!-- 
+                <div style="text-align: center;">
+                    <form style="display: inline; text-align: center;">
+  Select (month and year): <input type="month" name="bdaymonth">
+  <input type="submit">
+</form>
+
+                </div> -->
+    <ng2-smart-table (custom)="onCustomAction($event)" [settings]="settings" [source]="data"></ng2-smart-table>
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

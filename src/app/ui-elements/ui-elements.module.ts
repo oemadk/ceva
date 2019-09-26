@@ -19,7 +19,9 @@ import { UiNotificationsComponent } from './ui-notifications/ui-notifications.co
 import { UiModalsComponent } from './ui-modals/ui-modals.component'
 import { CommonElementsModule } from '../common-elements/common-elements.module';
 import { RouterModule } from '@angular/router';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { UploadService } from '../services/upload.service'
+import { HttpClientModule } from '@angular/common/http'; 
 @NgModule({
 	declarations: [
 		UiElementsComponent,
@@ -43,7 +45,13 @@ import { RouterModule } from '@angular/router';
 		NgxEchartsModule,
 		NgbModule,
 		CommonElementsModule,
-		RouterModule
-	]
+		RouterModule, 
+		ReactiveFormsModule,
+        FormsModule,
+        HttpClientModule
+	],
+	providers:[
+		UploadService
+	],
 })
 export class UiElementsModule { }

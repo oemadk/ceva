@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { EChartOption } from 'echarts';
 import { SidebarService } from '../../services/sidebar.service';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormGroup } from  '@angular/forms';
+import { UploadService } from  '../../services/upload.service';
 
 @Component({
 	selector: 'app-ui-modals',
@@ -14,8 +16,11 @@ export class UiModalsComponent implements OnInit {
 	public visitsOptions: EChartOption = {};
 	public sidebarVisible: boolean = true;
 	closeResult: string;
-
-	constructor(private sidebarService: SidebarService, private cdr: ChangeDetectorRef, private modalService: NgbModal) {
+ form: FormGroup;
+  error: string;
+  userId: number = 1;
+  uploadResponse = { status: '', message: '', filePath: '' };
+	constructor(private sidebarService: SidebarService, private cdr: ChangeDetectorRef, private modalService: NgbModal,private formBuilder: FormBuilder, private uploadService: UploadService) {
 		this.visitorsOptions = this.loadLineChartOptions([3, 5, 1, 6, 5, 4, 8, 3], "#49c5b6");
 		this.visitsOptions = this.loadLineChartOptions([4, 6, 3, 2, 5, 6, 5, 4], "#f4516c");
 	}
@@ -75,6 +80,27 @@ export class UiModalsComponent implements OnInit {
 	}
 
 	ngOnInit() {
+
+    this.form = this.formBuilder.group({
+      avatar: ['']
+    });
 	}
 
+	  onFileChange(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.form.get('avatar').setValue(file);
+    }
+  }
+
+
+  onSubmit(value) {
+  		    const formData = new FormData();
+    	formData.append('import_file', this.form.get('avatar').value);
+
+    this.uploadService.addsales(formData).subscribe(
+      (res) => this.uploadResponse = res,
+      (err) => this.error = err
+    );
+}
 }
